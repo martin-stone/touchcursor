@@ -27,8 +27,8 @@ LANGUAGE LANG_NEUTRAL, SUBLANG_NEUTRAL
 //
 
 VS_VERSION_INFO VERSIONINFO
- FILEVERSION 1,7,0,769
- PRODUCTVERSION 1,7,0,769
+ FILEVERSION 1,7,0,3
+ PRODUCTVERSION 1,7,0,3
  FILEFLAGSMASK 0x17L
 #ifdef _DEBUG
  FILEFLAGS 0x1L
@@ -44,12 +44,12 @@ BEGIN
         BLOCK "000004b0"
         BEGIN
             VALUE "FileDescription", "TouchCursor Dynamic Link Library"
-            VALUE "FileVersion", "1, 7, 0, 769"
+            VALUE "FileVersion", "1, 7, 0, 3"
             VALUE "InternalName", "touchcursor.dll"
             VALUE "LegalCopyright", "Copyright (C) 2010 Martin Stone"
             VALUE "OriginalFilename", "touchcursor.dll"
             VALUE "ProductName", "TouchCursor"
-            VALUE "ProductVersion", "1, 7, 0, 769"
+            VALUE "ProductVersion", "1, 7, 0, 3"
             VALUE "Company", ""
         END
     END

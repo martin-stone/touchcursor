@@ -4,7 +4,7 @@
 [Setup]
 AppName=TouchCursor
 AppVerName=TouchCursor 1.7.0
-VersionInfoVersion=1.7.0.769
+VersionInfoVersion=1.7.0.3
 AppPublisher=Martin Stone
 AppPublisherURL=http://rarepebble.com
 AppSupportURL=mailto:support@touchcursor.com
