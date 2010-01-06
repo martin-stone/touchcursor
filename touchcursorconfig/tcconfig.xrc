@@ -1,0 +1,654 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resource>
+  <!-- 
+    Copyright © 2010 Martin Stone.
+
+    This file is part of TouchCursor.
+
+    TouchCursor is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    TouchCursor is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with TouchCursor.  If not, see <http://www.gnu.org/licenses/>.
+  -->
+  <object class="wxFrame" name="MainFrameBase">
+    <object class="wxPanel">
+      <object class="wxFlexGridSizer">
+        <cols>1</cols>
+        <object class="sizeritem">
+          <object class="wxFlexGridSizer">
+            <object class="sizeritem">
+              <object class="wxNotebook">
+                <object class="notebookpage">
+                  <label>General</label>
+                  <object class="wxPanel" name="General">
+                    <object class="wxFlexGridSizer">
+                      <cols>1</cols>
+                      <object class="sizeritem">
+                        <object class="wxFlexGridSizer">
+                          <object class="sizeritem">
+                            <object class="wxCheckBox" name="Enabled">
+                              <label>E&amp;nabled</label>
+                              <tooltip>Enables and disables TouchCursor. You can configure this per-program on the Programs Tab</tooltip>
+                            </object>
+                          </object>
+                          <object class="sizeritem">
+                            <object class="wxBoxSizer">
+                              <object class="sizeritem">
+                                <object class="wxCheckBox" name="Training">
+                                  <label>&amp;Training mode</label>
+                                  <tooltip>This disables the real cursor keys to encourage you to learn to use cursor mode.</tooltip>
+                                </object>
+                                <flag>wxRIGHT</flag>
+                                <border>16</border>
+                              </object>
+                              <object class="sizeritem">
+                                <object class="wxCheckBox" name="BeepForMistakes">
+                                  <label>&amp;Beep for mistakes</label>
+                                  <enabled>0</enabled>
+                                </object>
+                              </object>
+                            </object>
+                          </object>
+                          <object class="sizeritem">
+                            <object class="wxCheckBox" name="RunAtStartup">
+                              <label>&amp;Run at startup</label>
+                              <style/>
+                              <tooltip>Runs TouchCursor when you log on to Windows.</tooltip>
+                            </object>
+                          </object>
+                          <object class="sizeritem">
+                            <object class="wxCheckBox" name="ShowInNotificationArea">
+                              <label>Show &amp;icon in notification area</label>
+                              <tooltip>Lets you show or hide the TouchCursor icon in the notification area (&quot;system tray&quot;).</tooltip>
+                            </object>
+                          </object>
+                          <object class="sizeritem">
+                            <object class="wxCheckBox" name="CheckForUpdates">
+                              <label>&amp;Check for newer versions weekly</label>
+                              <tooltip>Checks the TouchCursor web site for a new version at startup every seven days.</tooltip>
+                            </object>
+                          </object>
+                          <object class="sizeritem">
+                            <object class="wxFlexGridSizer">
+                              <object class="sizeritem">
+                                <object class="wxStaticText">
+                                  <label>&amp;Key bindings</label>
+                                </object>
+                                <flag>wxBOTTOM</flag>
+                                <border>4</border>
+                              </object>
+                              <object class="sizeritem">
+                                <object class="wxBoxSizer">
+                                  <orient>wxVERTICAL</orient>
+                                </object>
+                              </object>
+                              <object class="sizeritem">
+                                <object class="wxListBox" name="KeyList">
+                                  <content/>
+                                  <style>wxLB_SINGLE|wxLB_SORT</style>
+                                  <tooltip>This lets you customise the key bindings. You can add, edit or remove entries in the list using the buttons. Double-clicking an entry will also edit it.</tooltip>
+                                </object>
+                                <flag>wxALL|wxEXPAND</flag>
+                                <minsize>100</minsize>
+                              </object>
+                              <cols>2</cols>
+                              <growablerows>1</growablerows>
+                              <vgap>4</vgap>
+                              <hgap>8</hgap>
+                              <growablecols>0</growablecols>
+                              <object class="sizeritem">
+                                <object class="wxBoxSizer">
+                                  <object class="sizeritem">
+                                    <object class="wxButton" name="AddBindingButton">
+                                      <label>A&amp;dd...</label>
+                                    </object>
+                                    <flag>wxBOTTOM</flag>
+                                    <border>5</border>
+                                    <ratio>0</ratio>
+                                  </object>
+                                  <object class="sizeritem">
+                                    <object class="wxButton" name="EditBindingButton">
+                                      <label>&amp;Edit...</label>
+                                      <enabled>0</enabled>
+                                    </object>
+                                    <flag>wxBOTTOM</flag>
+                                    <border>5</border>
+                                    <ratio>0</ratio>
+                                  </object>
+                                  <object class="sizeritem">
+                                    <object class="wxButton" name="RemoveBindingButton">
+                                      <label>Re&amp;move</label>
+                                      <enabled>0</enabled>
+                                    </object>
+                                    <flag>wxBOTTOM</flag>
+                                    <border>5</border>
+                                    <ratio>0</ratio>
+                                  </object>
+                                  <object class="sizeritem">
+                                    <object class="wxButton" name="DefaultsButton">
+                                      <label>Re&amp;set...</label>
+                                      <tooltip>Resets the bindings to the default values.</tooltip>
+                                    </object>
+                                    <flag>wxBOTTOM</flag>
+                                    <border>5</border>
+                                    <ratio>0</ratio>
+                                  </object>
+                                  <orient>wxVERTICAL</orient>
+                                </object>
+                                <flag>wxALL|wxEXPAND</flag>
+                              </object>
+                            </object>
+                            <flag>wxTOP|wxBOTTOM|wxEXPAND</flag>
+                            <border>8</border>
+                          </object>
+                          <object class="sizeritem">
+                            <object class="wxBoxSizer">
+                              <orient>wxHORIZONTAL</orient>
+                              <object class="sizeritem">
+                                <object class="wxStaticText">
+                                  <label>To activate, &amp;hold down </label>
+                                </object>
+                                <flag>wxRIGHT|wxALIGN_CENTRE_VERTICAL</flag>
+                              </object>
+                              <object class="sizeritem">
+                                <object class="wxChoice" name="ActivationKeys">
+                                  <content>
+                                    <item>Caps Lock</item>
+                                  </content>
+                                  <selection>0</selection>
+                                  <tooltip>If you don't want to use Space to activate TouchCursor you can choose a different key from this list.</tooltip>
+                                </object>
+                                <border>3</border>
+                              </object>
+                            </object>
+                          </object>
+                          <cols>1</cols>
+                          <vgap>10</vgap>
+                          <growablecols>0</growablecols>
+                          <growablerows>5</growablerows>
+                        </object>
+                        <flag>wxALL|wxEXPAND</flag>
+                        <border>16</border>
+                      </object>
+                      <growablecols>0</growablecols>
+                      <growablerows>0</growablerows>
+                    </object>
+                  </object>
+                </object>
+                <object class="notebookpage">
+                  <label>Programs</label>
+                  <object class="wxPanel" name="Programs">
+                    <object class="wxFlexGridSizer">
+                      <object class="sizeritem">
+                        <object class="wxFlexGridSizer">
+                          <cols>1</cols>
+                          <rows>4</rows>
+                          <vgap>8</vgap>
+                          <growablecols>0</growablecols>
+                        </object>
+                        <flag>wxALL|wxEXPAND</flag>
+                        <border>16</border>
+                      </object>
+                      <growablecols>0</growablecols>
+                      <growablerows>0</growablerows>
+                      <cols>1</cols>
+                    </object>
+                  </object>
+                </object>
+                <usenotebooksizer>1</usenotebooksizer>
+                <object class="notebookpage">
+                  <label>About</label>
+                  <object class="wxPanel" name="About">
+                    <object class="wxFlexGridSizer">
+                      <object class="sizeritem">
+                        <object class="wxFlexGridSizer">
+                          <object class="spacer">
+                            <size>4,4</size>
+                          </object>
+                          <object class="sizeritem">
+                            <object class="wxStaticText">
+                              <label>TouchCursor Version 1.7.0 (Build 769)</label>
+                            </object>
+                            <flag>wxALIGN_CENTRE</flag>
+                          </object>
+                          <object class="sizeritem">
+                            <object class="wxStaticText">
+                              <label>Copyright © 2010 Martin Stone.</label>
+                            </object>
+                            <flag>wxALIGN_CENTRE</flag>
+                          </object>
+                          <object class="sizeritem">
+                            <object class="wxHtmlWindow" name="LicenseText">
+                              <htmlcode>&lt;font size=-1&gt;
+&lt;p&gt;TouchCursor is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
+&lt;/p&gt;
+
+&lt;p&gt;TouchCursor is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.   See the &lt;a href=&quot;http://www.gnu.org/licenses/gpl.html&quot; title=&quot;GPL License Text&quot;&gt;GNU General Public License&lt;/a&gt; for more details. 
+&lt;/p&gt;
+&lt;/font&gt;</htmlcode>
+                              <style>wxSUNKEN_BORDER</style>
+                            </object>
+                            <flag>wxEXPAND</flag>
+                          </object>
+                          <object class="spacer">
+                            <size>10,10</size>
+                          </object>
+                          <object class="sizeritem">
+                            <object class="wxGridSizer">
+                              <object class="sizeritem">
+                                <object class="wxButton" name="HelpButton">
+                                  <label>&amp;Help...</label>
+                                  <style/>
+                                </object>
+                                <flag>wxLEFT|wxRIGHT|wxEXPAND</flag>
+                              </object>
+                              <object class="sizeritem">
+                                <object class="wxButton" name="WebSiteButton">
+                                  <label>&amp;Web Site...</label>
+                                </object>
+                                <flag>wxLEFT|wxRIGHT|wxEXPAND</flag>
+                              </object>
+                              <object class="sizeritem">
+                                <object class="wxButton" name="CheckForUpdateButton">
+                                  <label>&amp;Check for Updates...</label>
+                                </object>
+                                <flag>wxEXPAND</flag>
+                              </object>
+                              <object class="sizeritem">
+                                <object class="wxButton" name="DonateButton">
+                                  <label>&amp;Donate...</label>
+                                </object>
+                                <flag>wxLEFT|wxRIGHT|wxEXPAND</flag>
+                              </object>
+                              <cols>2</cols>
+                              <vgap>5</vgap>
+                              <hgap>5</hgap>
+                            </object>
+                            <flag>wxLEFT|wxRIGHT|wxEXPAND</flag>
+                          </object>
+                          <cols>1</cols>
+                          <rows>4</rows>
+                          <vgap>12</vgap>
+                          <growablecols>0</growablecols>
+                          <growablerows>3</growablerows>
+                        </object>
+                        <flag>wxALL|wxEXPAND</flag>
+                        <border>16</border>
+                      </object>
+                      <growablecols>0</growablecols>
+                      <growablerows>0</growablerows>
+                      <cols>1</cols>
+                    </object>
+                  </object>
+                </object>
+              </object>
+              <flag>wxALL|wxEXPAND</flag>
+              <minsize>0</minsize>
+            </object>
+            <object class="sizeritem">
+              <object class="wxFlexGridSizer">
+                <object class="spacer"/>
+                <object class="sizeritem">
+                  <object class="wxButton" name="OkButton">
+                    <label>OK</label>
+                    <default>1</default>
+                  </object>
+                  <ratio>0</ratio>
+                </object>
+                <object class="sizeritem">
+                  <object class="wxButton" name="CancelButton">
+                    <label>Cancel</label>
+                  </object>
+                  <ratio>0</ratio>
+                </object>
+                <object class="sizeritem">
+                  <object class="wxButton" name="ApplyButton">
+                    <label>&amp;Apply</label>
+                  </object>
+                  <ratio>0</ratio>
+                </object>
+                <cols>4</cols>
+                <rows>1</rows>
+                <hgap>5</hgap>
+                <growablecols>0</growablecols>
+                <growablerows>0</growablerows>
+              </object>
+              <flag>wxALL|wxEXPAND</flag>
+            </object>
+            <cols>1</cols>
+            <rows>2</rows>
+            <vgap>5</vgap>
+            <growablecols>0</growablecols>
+            <growablerows>0</growablerows>
+          </object>
+          <flag>wxALL|wxEXPAND</flag>
+          <border>5</border>
+        </object>
+        <growablerows>0</growablerows>
+        <growablecols>0</growablecols>
+      </object>
+    </object>
+    <size>400,430</size>
+    <title>TouchCursor Configuration</title>
+    <centered>1</centered>
+  </object>
+  <object class="wxDialog" name="ProgListDialogBase">
+    <title>Edit Program List</title>
+    <object class="wxFlexGridSizer">
+      <cols>1</cols>
+      <object class="sizeritem">
+        <object class="wxFlexGridSizer">
+          <object class="sizeritem">
+            <object class="wxStaticText">
+              <label>Drop the crosshair icon onto the window 
+of the program you want to select:</label>
+              <style/>
+            </object>
+          </object>
+          <object class="sizeritem">
+            <object class="wxFlexGridSizer">
+              <cols>2</cols>
+              <rows>1</rows>
+              <hgap>8</hgap>
+              <growablecols>0</growablecols>
+              <object class="sizeritem">
+                <object class="wxListBox" name="ProgList">
+                  <content/>
+                </object>
+                <flag>wxALL|wxEXPAND</flag>
+              </object>
+              <object class="sizeritem">
+                <object class="wxBoxSizer">
+                  <orient>wxVERTICAL</orient>
+                  <object class="sizeritem">
+                    <object class="wxStaticBitmap" name="DragIcon">
+                      <bitmap/>
+                      <size>31,32</size>
+                    </object>
+                    <flag>wxALIGN_CENTRE</flag>
+                  </object>
+                  <object class="spacer">
+                    <size>0,10</size>
+                  </object>
+                  <object class="sizeritem">
+                    <object class="wxButton" name="RemoveButton">
+                      <label>&amp;Remove</label>
+                    </object>
+                  </object>
+                </object>
+              </object>
+              <growablerows>0</growablerows>
+              <object class="spacer">
+                <size>0,16</size>
+              </object>
+            </object>
+            <flag>wxALL|wxEXPAND</flag>
+          </object>
+          <object class="sizeritem">
+            <object class="wxFlexGridSizer">
+              <cols>4</cols>
+              <rows>1</rows>
+              <object class="sizeritem">
+                <object class="wxBoxSizer">
+                  <orient>wxVERTICAL</orient>
+                </object>
+              </object>
+              <object class="sizeritem">
+                <object class="wxButton" name="wxID_OK">
+                  <label>OK</label>
+                  <default>1</default>
+                </object>
+                <ratio>0</ratio>
+              </object>
+              <object class="sizeritem">
+                <object class="wxButton" name="wxID_CANCEL">
+                  <label>Cancel</label>
+                </object>
+                <ratio>0</ratio>
+              </object>
+              <hgap>5</hgap>
+              <growablecols>0</growablecols>
+              <growablerows>0</growablerows>
+            </object>
+            <flag>wxALL|wxEXPAND</flag>
+          </object>
+          <cols>1</cols>
+          <growablerows>1</growablerows>
+          <vgap>8</vgap>
+          <growablecols>0</growablecols>
+        </object>
+        <flag>wxALL|wxEXPAND</flag>
+        <border>16</border>
+      </object>
+      <growablerows>0</growablerows>
+      <growablecols>0</growablecols>
+    </object>
+    <centered>1</centered>
+    <style>wxDEFAULT_DIALOG_STYLE|wxTHICK_FRAME</style>
+  </object>
+  <object class="wxDialog" name="BindingDialogBase">
+    <title>Edit Key Binding</title>
+    <object class="wxFlexGridSizer">
+      <cols>1</cols>
+      <object class="sizeritem">
+        <object class="wxFlexGridSizer">
+          <object class="sizeritem">
+            <object class="wxFlexGridSizer">
+              <cols>2</cols>
+              <vgap>8</vgap>
+              <object class="sizeritem">
+                <object class="wxStaticText">
+                  <label>Key to &amp;press</label>
+                </object>
+              </object>
+              <object class="spacer">
+                <size>0,0</size>
+              </object>
+              <object class="sizeritem">
+                <object class="wxStaticText" name="ActivationKeyLabel">
+                  <label>Caps Lock + </label>
+                  <style>wxALIGN_RIGHT</style>
+                </object>
+                <flag>wxALIGN_RIGHT|wxALIGN_CENTRE_VERTICAL</flag>
+              </object>
+              <object class="sizeritem">
+                <object class="wxFlexGridSizer">
+                  <cols>2</cols>
+                  <rows>1</rows>
+                  <object class="sizeritem">
+                    <object class="wxTextCtrl" name="KeyToPress"/>
+                    <flag>wxEXPAND</flag>
+                  </object>
+                  <object class="sizeritem">
+                    <object class="wxButton" name="KeyToPressButton">
+                      <label>...</label>
+                      <size>21,21</size>
+                      <style/>
+                    </object>
+                  </object>
+                  <growablecols>0</growablecols>
+                </object>
+              </object>
+              <object class="sizeritem">
+                <object class="wxStaticText">
+                  <label>Key to &amp;generate</label>
+                </object>
+                <flag>wxTOP</flag>
+                <border>8</border>
+              </object>
+              <object class="spacer">
+                <size>0,0</size>
+              </object>
+              <growablerows>4</growablerows>
+              <growablecols>1</growablecols>
+              <object class="sizeritem">
+                <object class="wxFlexGridSizer">
+                  <cols>2</cols>
+                  <object class="sizeritem">
+                    <object class="wxGridSizer">
+                      <object class="sizeritem">
+                        <object class="wxCheckBox" name="Shift">
+                          <label>&amp;Shift</label>
+                        </object>
+                      </object>
+                      <object class="sizeritem">
+                        <object class="wxCheckBox" name="Ctrl">
+                          <label>&amp;Ctrl</label>
+                        </object>
+                      </object>
+                      <object class="sizeritem">
+                        <object class="wxCheckBox" name="Alt">
+                          <label>&amp;Alt</label>
+                        </object>
+                      </object>
+                      <object class="sizeritem">
+                        <object class="wxCheckBox" name="Win">
+                          <label>&amp;Win</label>
+                        </object>
+                      </object>
+                      <cols>1</cols>
+                      <rows>4</rows>
+                      <vgap>4</vgap>
+                    </object>
+                  </object>
+                  <object class="sizeritem">
+                    <object class="wxStaticText" name="">
+                      <label> + </label>
+                      <style>wxALIGN_RIGHT</style>
+                    </object>
+                    <flag>wxALIGN_RIGHT|wxALIGN_CENTRE_VERTICAL</flag>
+                  </object>
+                </object>
+                <flag>wxTOP|wxBOTTOM|wxALIGN_RIGHT</flag>
+                <border>4</border>
+              </object>
+              <object class="sizeritem">
+                <object class="wxFlexGridSizer">
+                  <cols>2</cols>
+                  <rows>1</rows>
+                  <object class="sizeritem">
+                    <object class="wxTextCtrl" name="KeyToGenerate"/>
+                    <flag>wxEXPAND</flag>
+                  </object>
+                  <object class="sizeritem">
+                    <object class="wxButton" name="KeyToGenerateButton">
+                      <label>...</label>
+                      <size>21,21</size>
+                    </object>
+                  </object>
+                  <growablecols>0</growablecols>
+                </object>
+                <flag>wxALIGN_CENTRE_VERTICAL</flag>
+              </object>
+              <object class="spacer">
+                <size>0,10</size>
+              </object>
+            </object>
+            <flag>wxALL|wxEXPAND</flag>
+          </object>
+          <object class="sizeritem">
+            <object class="wxFlexGridSizer">
+              <cols>4</cols>
+              <rows>1</rows>
+              <object class="sizeritem">
+                <object class="wxBoxSizer">
+                  <orient>wxVERTICAL</orient>
+                </object>
+              </object>
+              <object class="sizeritem">
+                <object class="wxButton" name="wxID_OK">
+                  <label>OK</label>
+                  <default>1</default>
+                </object>
+                <ratio>0</ratio>
+              </object>
+              <object class="sizeritem">
+                <object class="wxButton" name="wxID_CANCEL">
+                  <label>Cancel</label>
+                </object>
+                <ratio>0</ratio>
+              </object>
+              <hgap>5</hgap>
+              <growablecols>0</growablecols>
+              <growablerows>0</growablerows>
+            </object>
+            <flag>wxALL|wxEXPAND</flag>
+          </object>
+          <cols>1</cols>
+          <vgap>8</vgap>
+          <growablecols>0</growablecols>
+          <growablerows>0</growablerows>
+        </object>
+        <flag>wxALL|wxEXPAND</flag>
+        <border>16</border>
+      </object>
+      <growablerows>0</growablerows>
+      <growablecols>0</growablecols>
+    </object>
+    <centered>1</centered>
+    <style>wxDEFAULT_DIALOG_STYLE</style>
+  </object>
+  <object class="wxDialog" name="KeyDialogBase">
+    <title>Choose Key</title>
+    <centered>1</centered>
+    <style>wxDEFAULT_DIALOG_STYLE|wxTHICK_FRAME</style>
+    <object class="wxFlexGridSizer">
+      <cols>1</cols>
+      <object class="sizeritem">
+        <object class="wxFlexGridSizer">
+          <object class="sizeritem">
+            <object class="wxListBox" name="KeyList">
+              <content/>
+              <style>wxLB_SINGLE</style>
+            </object>
+            <flag>wxEXPAND</flag>
+          </object>
+          <object class="sizeritem">
+            <object class="wxFlexGridSizer">
+              <cols>4</cols>
+              <rows>1</rows>
+              <object class="sizeritem">
+                <object class="wxBoxSizer">
+                  <orient>wxVERTICAL</orient>
+                </object>
+              </object>
+              <object class="sizeritem">
+                <object class="wxButton" name="wxID_OK">
+                  <label>OK</label>
+                  <default>1</default>
+                </object>
+                <ratio>0</ratio>
+              </object>
+              <object class="sizeritem">
+                <object class="wxButton" name="wxID_CANCEL">
+                  <label>Cancel</label>
+                </object>
+                <ratio>0</ratio>
+              </object>
+              <hgap>5</hgap>
+              <growablecols>0</growablecols>
+              <growablerows>0</growablerows>
+            </object>
+            <flag>wxEXPAND</flag>
+          </object>
+          <cols>1</cols>
+          <vgap>8</vgap>
+          <growablerows>0</growablerows>
+          <growablecols>0</growablecols>
+        </object>
+        <flag>wxALL|wxEXPAND</flag>
+        <border>16</border>
+      </object>
+      <growablerows>0</growablerows>
+      <growablecols>0</growablecols>
+    </object>
+  </object>
+</resource>

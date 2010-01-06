@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<VisualStudioPropertySheet 
+	ProjectType="Visual C++" 
+	Version="8.00" 
+	Name="touchcursor"
+	>
+
+  <!-- Any relative paths here are relative to project files, not this file: -->
+  <UserMacro Name="WXWIDGETS_DIR" Value="..\..\..\external\wxMSW-2.8.0" />
+  <UserMacro Name="BOOST_DIR" Value="..\..\..\external\boost_1_39_0" />
+
+</VisualStudioPropertySheet>
