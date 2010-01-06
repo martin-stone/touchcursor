@@ -1,0 +1,56 @@
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "touchcursor", "touchcursor\touchcursor.vcproj", "{28FCA55C-677E-4F00-A50C-32F029CEA762}"
+	ProjectSection(ProjectDependencies) = postProject
+		{EEA5839B-CF9B-453D-BE67-7310B6561F68} = {EEA5839B-CF9B-453D-BE67-7310B6561F68}
+		{811F53B4-4E1A-47FC-AACC-F1ED9C2C4FC4} = {811F53B4-4E1A-47FC-AACC-F1ED9C2C4FC4}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "tcconfig", "touchcursorconfig\tcconfig.vcproj", "{305C4090-1F68-4733-9B98-E91A95A0F6AD}"
+	ProjectSection(ProjectDependencies) = postProject
+		{EEA5839B-CF9B-453D-BE67-7310B6561F68} = {EEA5839B-CF9B-453D-BE67-7310B6561F68}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "dll", "touchcursordll\dll.vcproj", "{811F53B4-4E1A-47FC-AACC-F1ED9C2C4FC4}"
+	ProjectSection(ProjectDependencies) = postProject
+		{EEA5839B-CF9B-453D-BE67-7310B6561F68} = {EEA5839B-CF9B-453D-BE67-7310B6561F68}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "tclib", "tclib\tclib.vcproj", "{EEA5839B-CF9B-453D-BE67-7310B6561F68}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "touchcursor_update", "touchcursor_update\touchcursor_update.vcproj", "{A9CD3F65-E481-46DA-A395-587C9DBEEFCB}"
+	ProjectSection(ProjectDependencies) = postProject
+		{EEA5839B-CF9B-453D-BE67-7310B6561F68} = {EEA5839B-CF9B-453D-BE67-7310B6561F68}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{28FCA55C-677E-4F00-A50C-32F029CEA762}.Debug|Win32.ActiveCfg = Debug|Win32
+		{28FCA55C-677E-4F00-A50C-32F029CEA762}.Debug|Win32.Build.0 = Debug|Win32
+		{28FCA55C-677E-4F00-A50C-32F029CEA762}.Release|Win32.ActiveCfg = Release|Win32
+		{28FCA55C-677E-4F00-A50C-32F029CEA762}.Release|Win32.Build.0 = Release|Win32
+		{305C4090-1F68-4733-9B98-E91A95A0F6AD}.Debug|Win32.ActiveCfg = Debug|Win32
+		{305C4090-1F68-4733-9B98-E91A95A0F6AD}.Debug|Win32.Build.0 = Debug|Win32
+		{305C4090-1F68-4733-9B98-E91A95A0F6AD}.Release|Win32.ActiveCfg = Release|Win32
+		{305C4090-1F68-4733-9B98-E91A95A0F6AD}.Release|Win32.Build.0 = Release|Win32
+		{811F53B4-4E1A-47FC-AACC-F1ED9C2C4FC4}.Debug|Win32.ActiveCfg = Debug|Win32
+		{811F53B4-4E1A-47FC-AACC-F1ED9C2C4FC4}.Debug|Win32.Build.0 = Debug|Win32
+		{811F53B4-4E1A-47FC-AACC-F1ED9C2C4FC4}.Release|Win32.ActiveCfg = Release|Win32
+		{811F53B4-4E1A-47FC-AACC-F1ED9C2C4FC4}.Release|Win32.Build.0 = Release|Win32
+		{EEA5839B-CF9B-453D-BE67-7310B6561F68}.Debug|Win32.ActiveCfg = Debug|Win32
+		{EEA5839B-CF9B-453D-BE67-7310B6561F68}.Debug|Win32.Build.0 = Debug|Win32
+		{EEA5839B-CF9B-453D-BE67-7310B6561F68}.Release|Win32.ActiveCfg = Release|Win32
+		{EEA5839B-CF9B-453D-BE67-7310B6561F68}.Release|Win32.Build.0 = Release|Win32
+		{A9CD3F65-E481-46DA-A395-587C9DBEEFCB}.Debug|Win32.ActiveCfg = Debug|Win32
+		{A9CD3F65-E481-46DA-A395-587C9DBEEFCB}.Debug|Win32.Build.0 = Debug|Win32
+		{A9CD3F65-E481-46DA-A395-587C9DBEEFCB}.Release|Win32.ActiveCfg = Release|Win32
+		{A9CD3F65-E481-46DA-A395-587C9DBEEFCB}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
