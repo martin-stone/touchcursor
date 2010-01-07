@@ -3,7 +3,7 @@
 echo Building exes...
 
 set DEVENV="C:\Program Files\Microsoft Visual Studio 9.0\Common7\IDE\devenv.com"
-%DEVENV% /build Release touchcursor.sln
+%DEVENV% /rebuild Release touchcursor.sln
 
 if errorlevel 1 exit %errorlevel%
 

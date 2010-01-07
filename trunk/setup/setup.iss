@@ -4,7 +4,7 @@
 [Setup]
 AppName=TouchCursor
 AppVerName=TouchCursor 1.7.0
-VersionInfoVersion=1.7.0.3
+VersionInfoVersion=1.7.0.5
 AppPublisher=Martin Stone
 AppPublisherURL=http://touchcursor.sourceforge.net/
 AppSupportURL=http://sourceforge.net/projects/touchcursor/support

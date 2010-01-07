@@ -26,7 +26,7 @@
 #include <sstream>
 
 namespace {
-    const int buildNum = 3;
+    const int buildNum = 5;
 
     std::wstring versionCheckUrl() {
         std::wostringstream url;
