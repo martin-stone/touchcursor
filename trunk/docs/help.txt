@@ -19,9 +19,9 @@ hand, leaving your left hand free to use Ctrl, Alt and Shift, as normal.
 To begin with, just run your favorite editor or word processor 
 and try moving the cursor around to get a feel for how it works.
 
-For some serious practice, you can try the online [training game][]. 
-You can also use the [training mode](#general_tab) option with your
-usual editor to force you into the TouchCursor habit.
+You can use the [training mode](#general_tab) option to help force 
+you into the TouchCursor habit during your day-to-day work. 
+You will probably want to restrict it to [certain programs](#programs_tab).
 
 ### Fine tuning
 
@@ -150,6 +150,3 @@ See the [GNU General Public License](http://www.gnu.org/licenses/gpl.html "GPL l
 ### More Information
 
 [TouchCursor on the Web](http://touchcursor.sourceforge.net/)  
-[Training Game][]  
-
-[Training Game]: http://touchcursor.sourceforge.net/game_instructions.html
