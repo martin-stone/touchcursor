@@ -330,11 +330,11 @@ public:
     }
 
     void onWebSiteButton(wxCommandEvent&) {
-        LaunchUrl(wxT("http://touchcursor.com/")); //XXX correct link
+        LaunchUrl(wxT("http://touchcursor.sourceforge.net/"));
     }
 
     void onDonateButton(wxCommandEvent&) {
-        LaunchUrl(wxT("http://touchcursor.com/")); //XXX correct link
+        LaunchUrl(wxT("http://touchcursor.sourceforge.net/")); // Button is disabled for now.
     }
 
     void onCheckForUpdateButton(wxCommandEvent&) {

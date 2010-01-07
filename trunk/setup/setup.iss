@@ -6,9 +6,9 @@ AppName=TouchCursor
 AppVerName=TouchCursor 1.7.0
 VersionInfoVersion=1.7.0.3
 AppPublisher=Martin Stone
-AppPublisherURL=http://rarepebble.com
-AppSupportURL=mailto:support@touchcursor.com
-AppUpdatesURL=http://touchcursor.com
+AppPublisherURL=http://touchcursor.sourceforge.net/
+AppSupportURL=http://sourceforge.net/projects/touchcursor/support
+AppUpdatesURL=http://touchcursor.sourceforge.net/
 AppCopyright=Copyright © 2006-2010 Martin Stone.
 DefaultDirName={pf}\TouchCursor
 DefaultGroupName=TouchCursor
@@ -47,7 +47,7 @@ Root: HKCU; Subkey: "Software\TouchCursor"; Flags: dontcreatekey uninsdeletekey
 Name: "{group}\TouchCursor Configuration"; Filename: "{app}\tcconfig.exe"; WorkingDir: "{app}"
 Name: "{group}\TouchCursor"; Filename: "{app}\touchcursor.exe"; WorkingDir: "{app}"
 Name: "{group}\Help"; Filename: "{app}\docs\help.html"
-Name: "{group}\{cm:ProgramOnTheWeb,TouchCursor}"; Filename: "http://touchcursor.com/"
+Name: "{group}\{cm:ProgramOnTheWeb,TouchCursor}"; Filename: "http://touchcursor.sourceforge.net/"
 Name: "{group}\{cm:UninstallProgram,TouchCursor}"; Filename: "{uninstallexe}"
 ; Name: "{userdesktop}\TouchCursor Configuration"; Filename: "{app}\tcconfig.exe"; Tasks: desktopicon
 
@@ -75,7 +75,7 @@ begin
   end;
 end;
 
-
+{ Feedback form was dropped when transitioning to SF.
 procedure CurUninstallStepChanged(CurUninstallStep: TUninstallStep);
 var
   ErrorCode: Integer;
@@ -83,6 +83,7 @@ begin
   if CurUninstallStep = usDone then
   begin
     if MsgBox('Would you like to provide feedback to the developer of TouchCursor?  All comments are welcome!', mbConfirmation, MB_YESNO) = IDYES then
-      ShellExec('open', 'http://touchcursor.com/feedback.html', '', '', SW_SHOW, ewNoWait, ErrorCode);
+      ShellExec('open', 'http://touchcursor.sourceforge.net/feedback.html', '', '', SW_SHOW, ewNoWait, ErrorCode);
   end;
 end;
+}

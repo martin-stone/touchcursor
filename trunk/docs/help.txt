@@ -149,7 +149,7 @@ See the [GNU General Public License](http://www.gnu.org/licenses/gpl.html "GPL l
 
 ### More Information
 
-[TouchCursor on the Web](http://touchcursor.com)  
+[TouchCursor on the Web](http://touchcursor.sourceforge.net/)  
 [Training Game][]  
 
-[Training Game]: http://touchcursor.com/game_instructions.html
+[Training Game]: http://touchcursor.sourceforge.net/game_instructions.html
