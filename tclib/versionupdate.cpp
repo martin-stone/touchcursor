@@ -30,7 +30,7 @@ namespace {
 
     std::wstring versionCheckUrl() {
         std::wostringstream url;
-        url << L"http://touchcursor.com/version/o/" << buildNum;
+        url << L"http://touchcursor.sourceforge.net/version/o/" << buildNum;
         return url.str();
     }
 }
@@ -61,7 +61,7 @@ VersionStatus GetVersionStatus() {
 
 
 void BrowseToDownload() {
-    LaunchUrl(L"http://touchcursor.com/update.html");
+    LaunchUrl(L"http://touchcursor.sourceforge.net/update.html");
 }
 
 } // namespace tclib
