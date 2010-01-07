@@ -215,7 +215,7 @@
                           </object>
                           <object class="sizeritem">
                             <object class="wxStaticText">
-                              <label>TouchCursor Version 1.7.0 (Rev 3)</label>
+                              <label>TouchCursor Version 1.7.0 (Rev 5)</label>
                             </object>
                             <flag>wxALIGN_CENTRE</flag>
                           </object>
