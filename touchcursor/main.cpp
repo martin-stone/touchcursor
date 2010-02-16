@@ -102,6 +102,7 @@ INT_PTR CALLBACK DialogProc(HWND hwnd, UINT message, WPARAM wParam, LPARAM lPara
     switch (message) {
 
         case WM_INITDIALOG: {
+            SetWindowText(hwnd, windowTitle);
             break;
         }
 
