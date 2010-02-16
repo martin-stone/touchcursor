@@ -638,15 +638,6 @@ void LoadOptions() {
 
 
 __declspec(dllexport)
-void Disable() {
-    // For end of demo pestering.
-    options.enabled = false;
-    options.Save();
-    RemoveHook();
-}
-
-
-__declspec(dllexport)
 bool ShouldShowInNotificationArea() {
     return options.showInNotificationArea;
 }
