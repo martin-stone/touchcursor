@@ -29,7 +29,6 @@ __declspec(dllimport) void RemoveHook();
 __declspec(dllimport) void LoadOptions();
 __declspec(dllimport) bool IsEnabled();
 __declspec(dllimport) bool ShouldShowInNotificationArea();
-__declspec(dllimport) void Disable();
 __declspec(dllimport) void ReHook();
 __declspec(dllimport) void CheckForUpdate();
 
@@ -39,7 +38,7 @@ namespace {
 
     const int taskbarNotificationMsg = WM_USER;
     const int loadOptionsMsg = WM_USER + 1;
-    const wchar_t* const nagTitle = L"TouchCursor - Unlicensed";
+    const wchar_t* const windowTitle = L"TouchCursor";
 
 
     DWORD showMenu(HWND hwnd) { 
@@ -174,7 +173,7 @@ int __stdcall WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR comman
     // only allow one instance to run:
     CreateMutex(0, 0, L"touchcursor process");
     if (GetLastError() == ERROR_ALREADY_EXISTS) {
-        HWND hwnd = FindWindow(0, nagTitle);
+        HWND hwnd = FindWindow(0, windowTitle);
         if (hwnd) {
             if (quit) {
                 PostMessage(hwnd, ID_POPUP_EXIT, 0, 0);
