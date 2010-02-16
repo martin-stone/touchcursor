@@ -3,8 +3,8 @@
 
 [Setup]
 AppName=TouchCursor
-AppVerName=TouchCursor 1.7.0
-VersionInfoVersion=1.7.0.5
+AppVerName=TouchCursor 1.7.1
+VersionInfoVersion=1.7.1.10
 AppPublisher=Martin Stone
 AppPublisherURL=http://touchcursor.sourceforge.net/
 AppSupportURL=http://sourceforge.net/projects/touchcursor/support
@@ -71,7 +71,7 @@ begin
     Exec(ExpandConstant('{app}\tcconfig.exe'), 'quit', '', SW_HIDE, ewWaitUntilTerminated, ResultCode);
     Exec(ExpandConstant('{app}\touchcursor.exe'), 'quit', '', SW_HIDE, ewWaitUntilTerminated, ResultCode);
     {Backup old settings file, if any, and if backup doesn't exist already}
-    FileCopy(ExpandConstant('{userappdata}\TouchCursor\settings.cfg'), ExpandConstant('{userappdata}\TouchCursor\pre-1.7.0-settings.cfg'), True);
+    FileCopy(ExpandConstant('{userappdata}\TouchCursor\settings.cfg'), ExpandConstant('{userappdata}\TouchCursor\pre-1.7.1-settings.cfg'), True);
   end;
 end;
 
