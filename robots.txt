@@ -1,0 +1,8 @@
+User-agent: *
+Disallow: /buy.html
+Disallow: /license.html
+Disallow: /download.html
+Disallow: /mailform.html
+Disallow: /game.html
+Disallow: /TouchCursorSetup-1.7.1.exe
+Disallow: /TouchCursor-1.7.1.zip

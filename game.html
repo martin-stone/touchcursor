@@ -1,0 +1,217 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+
+<html lang="en">
+<head>
+  <title>TouchCursor - Training Game</title>
+  <meta name="description" content="TouchCursor - %(subtitle)s">
+  <link rel="stylesheet" href="style.css" type="text/css">
+  <link rel="stylesheet" href="game/game.css" type="text/css">
+  <script type="text/javascript" src="MochiKit/Base.js">
+</script>
+  <script type="text/javascript" src="MochiKit/Async.js">
+</script>
+  <script type="text/javascript" src="MochiKit/Color.js">
+</script>
+  <script type="text/javascript" src="game/game.js">
+</script>
+  <script type="text/javascript" src="game/effects.js">
+</script>
+</head>
+
+<body onload="return main()">
+  <div id="heading" class="box">
+    <a href="http://martin-stone.github.io/touchcursor/"><img id="logo" src="./logo_med.png" width="100" height="70" alt="TouchCursor home" name="logo"></a>
+
+    <div id="headingtext">
+      <h1>TouchCursor</h1>
+
+      <h2>Training Game</h2>
+    </div>
+
+    <div id="menu">
+      <span><a href="./">home</a></span> <span><a href="./download.html">download</a></span> <span><a href="./overview.html">overview</a></span> <span><a href="./video.html">video</a></span> <span><a href="./screens.html">screenshots</a></span> <span><a href="./help.html">manual</a></span> <span><a href="./license.html">license</a></span>
+    </div>
+
+    <div class="clear"></div>
+  </div>
+
+  <div id="content" class="box">
+    <div id="playArea">
+      <table id="stats" summary="score">
+        <tr>
+          <td>Lives:</td>
+
+          <td id="lives" class="num">0</td>
+
+          <td>Level:</td>
+
+          <td id="level" class="num">0</td>
+
+          <td>Score:</td>
+
+          <td id="score" class="num">0</td>
+
+          <td>Prize:</td>
+
+          <td id="offered" class="num">0</td>
+        </tr>
+
+        <tr>
+          <td>Time:</td>
+
+          <td id="time" colspan="7">
+            <div id="timeBar">
+              &nbsp;
+            </div>
+          </td>
+        </tr>
+      </table>
+
+      <table id="gridPage0" class="grid" summary="p1">
+        <tr>
+          <td>&nbsp;</td>
+
+          <td>&nbsp;</td>
+
+          <td>&nbsp;</td>
+
+          <td>&nbsp;</td>
+        </tr>
+
+        <tr>
+          <td>&nbsp;</td>
+
+          <td>&nbsp;</td>
+
+          <td>&nbsp;</td>
+
+          <td>&nbsp;</td>
+        </tr>
+
+        <tr>
+          <td>&nbsp;</td>
+
+          <td>&nbsp;</td>
+
+          <td>&nbsp;</td>
+
+          <td>&nbsp;</td>
+        </tr>
+
+        <tr>
+          <td>&nbsp;</td>
+
+          <td>&nbsp;</td>
+
+          <td>&nbsp;</td>
+
+          <td>&nbsp;</td>
+        </tr>
+      </table>
+
+      <table id="gridPage1" class="grid" summary="p2">
+        <tr>
+          <td>&nbsp;</td>
+
+          <td>&nbsp;</td>
+
+          <td>&nbsp;</td>
+
+          <td>&nbsp;</td>
+        </tr>
+
+        <tr>
+          <td>&nbsp;</td>
+
+          <td>&nbsp;</td>
+
+          <td>&nbsp;</td>
+
+          <td>&nbsp;</td>
+        </tr>
+
+        <tr>
+          <td>&nbsp;</td>
+
+          <td>&nbsp;</td>
+
+          <td>&nbsp;</td>
+
+          <td>&nbsp;</td>
+        </tr>
+
+        <tr>
+          <td>&nbsp;</td>
+
+          <td>&nbsp;</td>
+
+          <td>&nbsp;</td>
+
+          <td>&nbsp;</td>
+        </tr>
+      </table>
+
+      <table id="gridPage2" class="grid" summary="p3">
+        <tr>
+          <td>&nbsp;</td>
+
+          <td>&nbsp;</td>
+
+          <td>&nbsp;</td>
+
+          <td>&nbsp;</td>
+        </tr>
+
+        <tr>
+          <td>&nbsp;</td>
+
+          <td>&nbsp;</td>
+
+          <td>&nbsp;</td>
+
+          <td>&nbsp;</td>
+        </tr>
+
+        <tr>
+          <td>&nbsp;</td>
+
+          <td>&nbsp;</td>
+
+          <td>&nbsp;</td>
+
+          <td>&nbsp;</td>
+        </tr>
+
+        <tr>
+          <td>&nbsp;</td>
+
+          <td>&nbsp;</td>
+
+          <td>&nbsp;</td>
+
+          <td>&nbsp;</td>
+        </tr>
+      </table>
+    </div>
+
+    <div id="instLink">
+      <a href="game_instructions.html">instructions</a>
+    </div>
+
+    <form id="kbEaterForm" action="game.html" name="kbEaterForm">
+      <input id="kbEater" onchange="this.value=''">
+    </form>
+  </div>
+
+  <div class="box">
+    <div class="smallprint">
+      Copyright &copy; 2010 Martin Stone
+    </div>
+  </div>
+
+  <div id="cover" style="display:none"></div>
+
+  <div id="messagepopup" style="display:none"></div>
+</body>
+</html>

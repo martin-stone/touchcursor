@@ -1,0 +1,12 @@
+Options -Indexes 
+
+RewriteEngine On
+RewriteBase /
+
+RewriteCond %{REQUEST_URI} !^/TouchCursorSetup-1.7.1.exe$
+RewriteRule ^.*TouchCursorSetup[-\d.]*?\.exe$ TouchCursorSetup-1.7.1.exe [R=permanent,L]
+
+RewriteCond %{REQUEST_URI} !^/TouchCursor-1.7.1.zip$
+RewriteRule ^.*TouchCursor[-\d.]*?\.zip$ TouchCursor-1.7.1.zip [R=permanent,L]
+
+RewriteRule ^version/(.*)/10$ empty.txt [L]

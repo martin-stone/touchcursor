@@ -1,0 +1,234 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+
+<html lang="en">
+<head>
+  <title>TouchCursor - Changelog</title>
+  <meta name="description" content="TouchCursor - Changelog">
+  <link rel="stylesheet" href="./style.css" type="text/css">
+  <link rel="shortcut icon" href="./favicon.ico">
+</head>
+
+<body id="tc">
+  <div id="heading" class="box">
+    <div id="tinydownload">
+      <a href="download.html">download</a> <a href="download.html"><img src="download_icon_tiny.png" width="14" height="14" alt=""></a>
+    </div><a href="http://martin-stone.github.io/touchcursor/"><img id="logo" src="./logo_med.png" width="100" height="70" alt="TouchCursor home" name="logo"></a>
+
+    <div id="headingtext">
+      <h1>TouchCursor</h1>
+
+      <h2>Changelog</h2>
+    </div>
+
+    <div id="menu">
+      <span><a href="./">home</a></span> <span><a href="./download.html">download</a></span> <span><a href="./overview.html">overview</a></span> <span><a href="./video.html">video</a></span> <span><a href="./screens.html">screenshots</a></span> <span><a href="./help.html">manual</a></span> <span><a href="./license.html">license</a></span>
+    </div>
+
+    <div class="clear"></div>
+  </div>
+
+  <div id="content" class="box">
+    <p><strong>1.7.1</strong> - 16 Feb 2010</p>
+
+    <ul>
+      <li>Fixed bug introduced in 1.7.0 where option changes wouldn't take effect until restart.</li>
+    </ul>
+
+    <p><strong>1.7.0</strong> - 07 Jan 2010</p>
+
+    <ul>
+      <li>Free version (GPL).</li>
+    </ul>
+
+    <p><strong>1.6.0</strong> - 21 Feb 2008</p>
+
+    <ul>
+      <li>Enabled mapping to/from Browser, Volume, Media and Launch keys.</li>
+    </ul>
+
+    <p><strong>1.5.0</strong> - 05 Jan 2008</p>
+
+    <ul>
+      <li>Added check-for-updates functionality.</li>
+    </ul>
+
+    <p><strong>1.4.0</strong> - 10 Dec 2007</p>
+
+    <ul>
+      <li>
+        <p>It is now possible to output Shift, Ctrl, Alt and Win in combination with a key. E.g. Space+X -&gt; Ctrl+Y.</p>
+      </li>
+
+      <li>
+        <p>Added "Beep for mistakes" option in training mode.</p>
+      </li>
+
+      <li>
+        <p>Installer backs up old settings file.</p>
+      </li>
+
+      <li>
+        <p>When editing an existing key binding, the "Key to generate" box is focused by default.</p>
+      </li>
+    </ul>
+
+    <p><strong>1.3.1</strong> - 23 Oct 2007</p>
+
+    <ul>
+      <li>
+        <p>Fixed a bug where key presses would sometimes pass through unchanged when they shouldn't.</p>
+      </li>
+
+      <li>
+        <p>Improved installer behaviour on Windows Vista.</p>
+      </li>
+    </ul>
+
+    <p><strong>1.3.0</strong> - 12 Sep 2007</p>
+
+    <ul>
+      <li>Made the activation key configurable. (Previously space bar only.)</li>
+    </ul>
+
+    <p><strong>1.2.2</strong> - 13 Jul 2007</p>
+
+    <ul>
+      <li>Fixed bug where generated Escape events would sometimes be ignored by Virtual PC and VMware.</li>
+    </ul>
+
+    <p><strong>1.2.1</strong> - 08 Jun 2007</p>
+
+    <ul>
+      <li>
+        <p>Works with full-screen Remote Desktop Connection and VMware.<br>
+        (Note that versions of VMware that have the "enhanced virtual keyboard" option must have this option disabled for the host's TouchCursor to work when using the guest OS.)</p>
+      </li>
+
+      <li>
+        <p>Installer adds a Start Menu shortcut for touchcursor.exe (not usually needed due to "Run at startup" option).</p>
+      </li>
+
+      <li>
+        <p>Installer sets AppPath for touchcursor.exe.</p>
+      </li>
+    </ul>
+
+    <p><strong>1.2.0</strong> - 24 May 2007</p>
+
+    <ul>
+      <li>
+        <p>Works with Microsoft Virtual PC and Remote Desktop Connection (but not full-screen RDC yet).</p>
+      </li>
+
+      <li>
+        <p>Alt+Space now works in a DOS box.</p>
+      </li>
+
+      <li>
+        <p>Some nag screen tweaks.</p>
+      </li>
+    </ul>
+
+    <p><strong>1.1.1</strong> - 18 Apr 2007</p>
+
+    <ul>
+      <li>License change.</li>
+    </ul>
+
+    <p><strong>1.1.0</strong> - 09 Apr 2007</p>
+
+    <ul>
+      <li>
+        <p>Settings stored in a file instead of the registry.</p>
+      </li>
+
+      <li>
+        <p>Digitally signed installer and application files.</p>
+      </li>
+
+      <li>
+        <p>Minor dialog text re-wordings.</p>
+      </li>
+    </ul>
+
+    <p><strong>1.0.6</strong> - 19 Feb 2007</p>
+
+    <ul>
+      <li>The icon in the notification area is optional.</li>
+    </ul>
+
+    <p><strong>1.0.5</strong> - 8 Feb 2007</p>
+
+    <ul>
+      <li>Bug fix for occasional failure of "Run at startup".</li>
+    </ul>
+
+    <p><strong>1.0.4</strong> - 2 Feb 2007</p>
+
+    <ul>
+      <li>
+        <p>You can now bind Tab events, using the "..." button on the binding dialog. Escape is now bound in this way too, instead of having non-standard Escape handling on the dialog.</p>
+      </li>
+
+      <li>
+        <p>Enabled binding of Shift and Ctrl events. Note that the training mode can be pretty unbearable with these bound, unfortunately.</p>
+      </li>
+
+      <li>
+        <p>When space is released, key-up events are generated for any generated keys that are still held down .</p>
+      </li>
+
+      <li>
+        <p>Correct, locale-proof mapping is used from OEM key codes to characters. (Previously hard-coded to US keyboard layout.)</p>
+      </li>
+
+      <li>
+        <p>Added accelerator for F1 help.</p>
+      </li>
+    </ul>
+
+    <p><strong>1.0.3</strong> - 28 December 2006</p>
+
+    <ul>
+      <li>
+        <p>Support for running from a USB drive.</p>
+      </li>
+
+      <li>
+        <p>Zip distribution.</p>
+      </li>
+    </ul>
+
+    <p><strong>1.0.2</strong> - 1 December 2006</p>
+
+    <ul>
+      <li>
+        <p>Works on Windows 2000</p>
+      </li>
+
+      <li>
+        <p>Uninstall asks for feedback.</p>
+      </li>
+    </ul>
+
+    <p><strong>1.0.1</strong> - 17 November 2006</p>
+
+    <ul>
+      <li>Trial period changed to 30 days.</li>
+    </ul>
+
+    <p><strong>1.0.0</strong> - 14 November 2006</p>
+
+    <ul>
+      <li>Initial release.</li>
+    </ul>
+  </div>
+
+  <div class="box">
+    <div class="smallprint">
+      Copyright &copy; 2010 Martin Stone
+    </div>
+  </div>
+</body>
+</html>

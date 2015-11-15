@@ -1,0 +1,249 @@
+html {
+	/* Always vertical scrollbar - stops width changes between pages */
+	overflow-y: scroll;
+}
+
+body { 
+	font-family: Arial, Helvetica, sans-serif;
+	background: url(body_shadow.png) repeat-x top #eef;
+	color: black;
+	margin: 0;
+	padding: 0;
+}
+
+p {
+	margin: 0 0 1em 0;
+}
+
+img {
+	border: 0px none;
+}
+
+div.box {
+	background-color: white;
+	color: black;
+	margin: 1em 70px 1em 70px;
+	padding: 1em;
+	border: 1px solid #99f;
+	clear: both;
+	zoom: 100%; /* IE 6 bug fix */
+}
+
+div#heading {
+	padding-bottom: 0; /* Cos there's a div.clear padding it */
+}
+
+div#headingtext {
+	text-align: left;
+	margin-left: 100px;
+}
+
+#headingtext h1 {
+	font-size: 220%;
+	margin: 0;
+	font-weight: normal;
+	zoom: 100%; /* give it "layout" in Explorer, for nicer flow round menu */
+}
+
+#headingtext h2 {
+	margin: 0 0 0 5em;
+	font-size: 100%;
+	font-weight: bold;
+	color: #888;
+	background-color: white;
+}
+
+h1#crack {
+	font-size: 170%;
+}
+
+div#tinydownload { 
+	float: right;
+	font-size: small;
+}
+div#tinydownload * {
+	vertical-align: bottom;
+}
+span.downloadfile * {
+	vertical-align: bottom;
+}
+
+.valigncentre * {
+	vertical-align: middle;
+}
+
+div#menu {
+ 	margin-top: 1em;
+	margin-bottom: 0.5em;
+	text-align: right;
+	/* float: right; */
+	font-size: small;
+	padding-left: 2em;
+}
+
+#menu span {
+	margin-left: 1ex;
+	white-space: nowrap;
+}
+
+span.thispage {
+	color: silver;
+}
+
+.center {
+	text-align: center;
+}
+
+.small {
+	font-size: small;
+}
+
+div#content {
+	line-height: 1.4;
+}
+
+div#summary {
+	float: left;
+	width: 50%;
+	margin-bottom: 1em;
+	min-width: 240px; /* Same as key diagram */
+	line-height: 1.4;
+}
+
+div#indexkeys {
+	text-align: center;
+}
+
+A {
+	color: #22f;
+	/* background-color: white; */
+}
+
+A:link    { color: #22f; }
+A:visited { color: #66a; }
+/* A:hover   { background-color: #C9C9FC;}
+A:active  { background-color: #C9C9FC;}
+ */
+
+
+img#logo {
+	float: left;
+	margin: 5px 10px 10px 0px;
+}
+
+.clear {
+	clear: both;
+}
+
+dt { 
+	margin-left: 0em;
+	margin-top: 1.5em; 
+	margin-bottom: 0em; 
+	font-weight: bold;
+}
+
+dd {
+	margin-left: 0em;
+	margin-top: 0.7em; 
+	margin-bottom: 1em; 
+}
+
+ul {
+	list-style-type: square;
+	margin-left: 1em;
+	padding-left: 1em;
+}
+
+li {
+	margin-top: 0.5em; 
+}
+
+div#content dd ul {
+	list-style-position: outside;
+	margin-left: 1em;
+	padding-left: 0em;
+}
+
+div#content dd li {
+	margin-left: 0em;
+}
+
+div.boxlink {
+	text-align: center;
+	line-height: 1.4;
+	margin: 2em;
+}
+
+
+div#download {
+	float: left;
+	width: 45%;
+	margin: 0;
+}
+
+div#register {
+	float: right;
+	width: 45%;
+	margin: 0;
+}
+
+div#updatebuybox {
+	margin: 0;
+}
+
+.boxlink h3, .boxlink p
+{
+	font-size: medium;
+	margin: 0;
+}
+
+div.subsection dt {
+	margin-left: 2em;
+}
+div.subsection dd {
+	margin-left: 4em;
+}
+
+p.picture {
+	margin-left: 4em; /* same as dd */
+}
+
+div.screencaption {
+	margin: 1.5em auto 0.5em 4em;
+	max-width: 408px; /* width of the config dialog */
+}
+
+div.scrollspace {
+	height: 5em;
+}
+
+.smallprint {
+	font-size: small;
+	text-align: center;
+}
+
+input.mailfield {
+	font-family: monospace;
+}
+
+span.logdate {
+	font-weight: normal;
+}
+
+#trialpay td {
+	padding: .5em .5em .5em 0;
+}
+
+div#game-img {
+	float: right;
+	margin-top: 0;
+}
+
+.quotes {
+	color: darkgray;
+	font-size: small;
+	text-align: center;
+}
+.quotes a {
+	color: darkgray;
+}
