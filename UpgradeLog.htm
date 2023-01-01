@@ -1,0 +1,345 @@
+﻿<!DOCTYPE html>
+<!-- saved from url=(0014)about:internet -->
+ <html xmlns:msxsl="urn:schemas-microsoft-com:xslt"><head><meta content="en-us" http-equiv="Content-Language" /><meta content="text/html; charset=utf-16" http-equiv="Content-Type" /><title _locID="ConversionReport0">
+          Migration Report
+        </title><style> 
+                    /* Body style, for the entire document */
+                    body
+                    {
+                        background: #F3F3F4;
+                        color: #1E1E1F;
+                        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+                        padding: 0;
+                        margin: 0;
+                    }
+
+                    /* Header1 style, used for the main title */
+                    h1
+                    {
+                        padding: 10px 0px 10px 10px;
+                        font-size: 21pt;
+                        background-color: #E2E2E2;
+                        border-bottom: 1px #C1C1C2 solid; 
+                        color: #201F20;
+                        margin: 0;
+                        font-weight: normal;
+                    }
+
+                    /* Header2 style, used for "Overview" and other sections */
+                    h2
+                    {
+                        font-size: 18pt;
+                        font-weight: normal;
+                        padding: 15px 0 5px 0;
+                        margin: 0;
+                    }
+
+                    /* Header3 style, used for sub-sections, such as project name */
+                    h3
+                    {
+                        font-weight: normal;
+                        font-size: 15pt;
+                        margin: 0;
+                        padding: 15px 0 5px 0;
+                        background-color: transparent;
+                    }
+
+                    /* Color all hyperlinks one color */
+                    a
+                    {
+                        color: #1382CE;
+                    }
+
+                    /* Table styles */ 
+                    table
+                    {
+                        border-spacing: 0 0;
+                        border-collapse: collapse;
+                        font-size: 10pt;
+                    }
+
+                    table th
+                    {
+                        background: #E7E7E8;
+                        text-align: left;
+                        text-decoration: none;
+                        font-weight: normal;
+                        padding: 3px 6px 3px 6px;
+                    }
+
+                    table td
+                    {
+                        vertical-align: top;
+                        padding: 3px 6px 5px 5px;
+                        margin: 0px;
+                        border: 1px solid #E7E7E8;
+                        background: #F7F7F8;
+                    }
+
+                    /* Local link is a style for hyperlinks that link to file:/// content, there are lots so color them as 'normal' text until the user mouse overs */
+                    .localLink
+                    {
+                        color: #1E1E1F;
+                        background: #EEEEED;
+                        text-decoration: none;
+                    }
+
+                    .localLink:hover
+                    {
+                        color: #1382CE;
+                        background: #FFFF99;
+                        text-decoration: none;
+                    }
+
+                    /* Center text, used in the over views cells that contain message level counts */ 
+                    .textCentered
+                    {
+                        text-align: center;
+                    }
+
+                    /* The message cells in message tables should take up all avaliable space */
+                    .messageCell
+                    {
+                        width: 100%;
+                    }
+
+                    /* Padding around the content after the h1 */ 
+                    #content 
+                    {
+	                    padding: 0px 12px 12px 12px; 
+                    }
+
+                    /* The overview table expands to width, with a max width of 97% */ 
+                    #overview table
+                    {
+                        width: auto;
+                        max-width: 75%; 
+                    }
+
+                    /* The messages tables are always 97% width */
+                    #messages table
+                    {
+                        width: 97%;
+                    }
+
+                    /* All Icons */
+                    .IconSuccessEncoded, .IconInfoEncoded, .IconWarningEncoded, .IconErrorEncoded
+                    {
+                        min-width:18px;
+                        min-height:18px; 
+                        background-repeat:no-repeat;
+                        background-position:center;
+                    }
+
+                    /* Success icon encoded */
+                    .IconSuccessEncoded
+                    {
+                        /* Note: Do not delete the comment below. It is used to verify the correctness of the encoded image resource below before the product is released */
+                        /* [---XsltValidateInternal-Base64EncodedImage:IconSuccess#Begin#background-image: url(data:image/png;base64,#Separator#);#End#] */
+                        background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAABcElEQVR4Xq2TsUsCURzHv15g8ZJcBWlyiYYgCIWcb9DFRRwMW5TA2c0/QEFwFkxxUQdxVlBwCYWOi6IhWgQhBLHJUCkhLr/BW8S7gvrAg+N+v8/v+x68Z8MGy+XSCyABQAXgBgHGALoASkIIDWSLeLBetdHryMjd5IxQPWT4rn1c/P7+xxp72Cs9m5SZ0Bq2vPnbPFafK2zDvmNHypdC0BPkLlQhxJsCAhQoZwdZU5mwxh720qGo8MzTxTTKZDPCx2HoVzp6lz0Q9tKhyx0kGs8Ny+TkWRKk8lCROwEduhyg9l/6lunOPSfmH3NUH6uQ0KHLAe7JYvJjevm+DAMGJHToKtigE+vwvIidxLamb8IBY9e+C5LiXREkfho3TSd06HJA13/oh6T51MTsfQbHrsMynQ5dDihFjiK8JJAU9AKIWTp76dCVN7HWHrajmUEGvyF9nkbAE6gLIS7kTUyuf2gscLoJrElZo/Mvj+nPz/kLTmfnEwP3tB0AAAAASUVORK5CYII=);
+                    }
+
+                    /* Information icon encoded */
+                    .IconInfoEncoded
+                    {
+                        /* Note: Do not delete the comment below. It is used to verify the correctness of the encoded image resource below before the product is released */
+                        /* [---XsltValidateInternal-Base64EncodedImage:IconInformation#Begin#background-image: url(data:image/png;base64,#Separator#);#End#] */
+                        background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABHElEQVR4Xs2TsUoDQRRF7wwoziokjZUKadInhdhukR9YP8DMX1hYW+QvdsXa/QHBbcXC7W0CamWTQnclFutceIQJwwaWNLlwm5k5d94M76mmaeCrrmsLYOocY12FcxZFUeozCqKqqgYA8uevv1H6VuPxcwlfk5N92KHBxfFeCSAxxswlYAW/Xr989x/mv9gkhtyMDhcAxgzRsp7flj8B/HF1RsMXq+NZMkopaHe7lbKxQUEIGbKsYNoGn969060hZBkQex/W8oRQwsQaW2o3Ago2SVcJUzAgY3N0lTCZZm+zPS8HB51gMmS1DEYyOz9acKO1D8JWTlafKIMxdhvlfdyT94Vv5h7P8Ky7nQzACmhvKq3zk3PjW9asz9D/1oigecsioooAAAAASUVORK5CYII=);
+                    }
+
+                    /* Warning icon encoded */
+                    .IconWarningEncoded
+                    {
+                        /* Note: Do not delete the comment below. It is used to verify the correctness of the encoded image resource below before the product is released */
+                        /* [---XsltValidateInternal-Base64EncodedImage:IconWarning#Begin#background-image: url(data:image/png;base64,#Separator#);#End#] */
+                        background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAx0lEQVR4XpWSMQ7CMAxFf4xAyBMLCxMrO8dhaBcuwdCJS3RJBw7SA/QGTCxdWJgiQYWKXJWKIXHIlyw5lqr34tQgEOdcBsCOx5yZK3hCCKdYXneQkh4pEfqzLfu+wVDSyyzFoJjfz9NB+pAF+eizx2Vruts0k15mPgvS6GYvpVtQhB61IB/dk6AF6fS4Ben0uIX5odtFe8Q/eW1KvFeH4e8khT6+gm5B+t3juyDt7n0jpe+CANTd+oTUjN/U3yVaABnSUjFz/gFq44JaVSCXeQAAAABJRU5ErkJggg==);
+                    }
+
+                    /* Error icon encoded */
+                    .IconErrorEncoded
+                    {
+                        /* Note: Do not delete the comment below. It is used to verify the correctness of the encoded image resource below before the product is released */
+                        /* [---XsltValidateInternal-Base64EncodedImage:IconError#Begin#background-image: url(data:image/png;base64,#Separator#);#End#] */
+                        background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABQElEQVR4XqWTvUoEQRCE6wYPZUA80AfwAQz23uCMjA7MDRQEIzPBVEyNTQUFIw00vcQTTMzuAh/AxEQQT8HF/3G/oGGnEUGuoNnd6qoZuqltyKEsyzVJq5I6rnUp6SjGeGhESikzzlc1eL7opfuVbrqbU1Zw9NCgtQMaZpY0eNnaaL2fHusvTK5vKu7sjSS1Y4y3QUA6K3e3Mau5UFDyMP7tYF9o8cAHZv68vipoIJg971PZIZ5HiwdvYGGvFVFHmGmZ2MxwmQYPXubPl9Up0tfoMQGetXd6mRbvhBw+boZ6WF7Mbv1+GsHRk0fQmPAH1GfmZirbCfDJ61tw3Px8/8pZsPAG4jlVhcPgZ7adwNWBB68lkRQWFiTgFlbnLY3DGGM7izIJIyT/jjIvEJw6fdJTc6krDzh6aMwMP9bvDH4ADSsa9uSWVJkAAAAASUVORK5CYII=);
+                    }
+                 </style><script type="text/javascript" language="javascript"> 
+          
+            // Startup 
+            // Hook up the the loaded event for the document/window, to linkify the document content
+            var startupFunction = function() { linkifyElement("messages"); };
+            
+            if(window.attachEvent)
+            {
+              window.attachEvent('onload', startupFunction);
+            }
+            else if (window.addEventListener) 
+            {
+              window.addEventListener('load', startupFunction, false);
+            }
+            else 
+            {
+              document.addEventListener('load', startupFunction, false);
+            } 
+            
+            // Toggles the visibility of table rows with the specified name 
+            function toggleTableRowsByName(name)
+            {
+               var allRows = document.getElementsByTagName('tr');
+               for (i=0; i < allRows.length; i++)
+               {
+                  var currentName = allRows[i].getAttribute('name');
+                  if(!!currentName && currentName.indexOf(name) == 0)
+                  {
+                      var isVisible = allRows[i].style.display == ''; 
+                      isVisible ? allRows[i].style.display = 'none' : allRows[i].style.display = '';
+                  }
+               }
+            }
+            
+            function scrollToFirstVisibleRow(name) 
+            {
+               var allRows = document.getElementsByTagName('tr');
+               for (i=0; i < allRows.length; i++)
+               {
+                  var currentName = allRows[i].getAttribute('name');
+                  var isVisible = allRows[i].style.display == ''; 
+                  if(!!currentName && currentName.indexOf(name) == 0 && isVisible)
+                  {
+                     allRows[i].scrollIntoView(true); 
+                     return true; 
+                  }
+               }
+               
+               return false;
+            }
+            
+            // Linkifies the specified text content, replaces candidate links with html links 
+            function linkify(text)
+            {
+                 if(!text || 0 === text.length)
+                 {
+                     return text; 
+                 }
+
+                 // Find http, https and ftp links and replace them with hyper links 
+                 var urlLink = /(http|https|ftp)\:\/\/[a-zA-Z0-9\-\.]+(:[a-zA-Z0-9]*)?\/?([a-zA-Z0-9\-\._\?\,\/\\\+&%\$#\=~;\{\}])*/gi;
+                 
+                 return text.replace(urlLink, '<a href="$&">$&</a>') ;
+            }
+            
+            // Linkifies the specified element by ID
+            function linkifyElement(id)
+            {
+                var element = document.getElementById(id);
+                if(!!element)
+                {
+                  element.innerHTML = linkify(element.innerHTML); 
+                }
+            }
+            
+            function ToggleMessageVisibility(projectName)
+            {
+              if(!projectName || 0 === projectName.length)
+              {
+                return; 
+              }
+              
+              toggleTableRowsByName("MessageRowClass" + projectName);
+              toggleTableRowsByName('MessageRowHeaderShow' + projectName);
+              toggleTableRowsByName('MessageRowHeaderHide' + projectName); 
+            }
+            
+            function ScrollToFirstVisibleMessage(projectName)
+            {
+              if(!projectName || 0 === projectName.length)
+              {
+                return; 
+              }
+              
+              // First try the 'Show messages' row
+              if(!scrollToFirstVisibleRow('MessageRowHeaderShow' + projectName))
+              {
+                // Failed to find a visible row for 'Show messages', try an actual message row 
+                scrollToFirstVisibleRow('MessageRowClass' + projectName); 
+              }
+            }
+           </script></head><body><h1 _locID="ConversionReport">
+          Migration Report - touchcursor</h1><div id="content"><h2 _locID="OverviewTitle">Overview</h2><div id="overview"><table><tr><th></th><th _locID="ProjectTableHeader">Project</th><th _locID="PathTableHeader">Path</th><th _locID="ErrorsTableHeader">Errors</th><th _locID="WarningsTableHeader">Warnings</th><th _locID="MessagesTableHeader">Messages</th></tr><tr><td class="IconWarningEncoded" /><td><strong><a href="#dll">dll</a></strong></td><td>touchcursordll\dll.vcproj</td><td class="textCentered"><a>0</a></td><td class="textCentered"><a href="#dllWarning">7</a></td><td class="textCentered"><a href="#" onclick="ScrollToFirstVisibleMessage('dll'); return false;">6</a></td></tr><tr><td class="IconWarningEncoded" /><td><strong><a href="#tcconfig">tcconfig</a></strong></td><td>touchcursorconfig\tcconfig.vcproj</td><td class="textCentered"><a>0</a></td><td class="textCentered"><a href="#tcconfigWarning">7</a></td><td class="textCentered"><a href="#" onclick="ScrollToFirstVisibleMessage('tcconfig'); return false;">6</a></td></tr><tr><td class="IconWarningEncoded" /><td><strong><a href="#tclib">tclib</a></strong></td><td>tclib\tclib.vcproj</td><td class="textCentered"><a>0</a></td><td class="textCentered"><a href="#tclibWarning">5</a></td><td class="textCentered"><a href="#" onclick="ScrollToFirstVisibleMessage('tclib'); return false;">6</a></td></tr><tr><td class="IconWarningEncoded" /><td><strong><a href="#touchcursor">touchcursor</a></strong></td><td>touchcursor\touchcursor.vcproj</td><td class="textCentered"><a>0</a></td><td class="textCentered"><a href="#touchcursorWarning">5</a></td><td class="textCentered"><a href="#" onclick="ScrollToFirstVisibleMessage('touchcursor'); return false;">2</a></td></tr><tr><td class="IconWarningEncoded" /><td><strong><a href="#touchcursor_update">touchcursor_update</a></strong></td><td>touchcursor_update\touchcursor_update.vcproj</td><td class="textCentered"><a>0</a></td><td class="textCentered"><a href="#touchcursor_updateWarning">5</a></td><td class="textCentered"><a href="#" onclick="ScrollToFirstVisibleMessage('touchcursor_update'); return false;">2</a></td></tr><tr><td class="IconWarningEncoded" /><td><strong><a href="#Solution"><span _locID="OverviewSolutionSpan">Solution</span></a></strong></td><td>touchcursor.sln</td><td class="textCentered"><a>0</a></td><td class="textCentered"><a href="#SolutionWarning">1</a></td><td class="textCentered"><a href="#" onclick="ScrollToFirstVisibleMessage('Solution'); return false;">2</a></td></tr></table></div><h2 _locID="SolutionAndProjectsTitle">Solution and projects</h2><div id="messages"><a name="dll" /><h3>dll</h3><table><tr id="dllHeaderRow"><th></th><th class="messageCell" _locID="MessageTableHeader">Message</th></tr><tr name="WarningRowClassdll"><td class="IconWarningEncoded"><a name="dllWarning" /></td><td class="messageCell"><strong>touchcursordll\dll.vcproj:
+        </strong><span>VCWebServiceProxyGeneratorTool is no longer supported. The tool has been removed from your project settings.</span></td></tr><tr name="WarningRowClassdll"><td class="IconWarningEncoded"><a name="dllWarning" /></td><td class="messageCell"><strong>touchcursordll\dll.vcproj:
+        </strong><span>MSB8012: $(TargetPath) ('C:\martin\code\touchcursor\bin\Debug\dll.dll') does not match the Librarian's OutputFile property value '..\bin\Debug\dll.dll' ('C:\martin\code\bin\Debug\dll.dll') in project configuration 'Debug|Win32'. This may cause your project to build incorrectly. To correct this, please make sure that $(TargetPath) property value matches the value specified in %(Lib.OutputFile).</span></td></tr><tr name="WarningRowClassdll"><td class="IconWarningEncoded"><a name="dllWarning" /></td><td class="messageCell"><strong>touchcursordll\dll.vcproj:
+        </strong><span>MSB8012: $(TargetName) ('dll') does not match the Linker's OutputFile property value '..\bin\Debug\touchcursor.dll' ('touchcursor') in project configuration 'Debug|Win32'. This may cause your project to build incorrectly. To correct this, please make sure that $(TargetName) property value matches the value specified in %(Link.OutputFile).</span></td></tr><tr name="WarningRowClassdll"><td class="IconWarningEncoded"><a name="dllWarning" /></td><td class="messageCell"><strong>touchcursordll\dll.vcproj:
+        </strong><span>MSB8012: $(TargetPath) ('C:\martin\code\touchcursor\bin\Debug\dll.dll') does not match the Linker's OutputFile property value '..\bin\Debug\touchcursor.dll' ('C:\martin\code\bin\Debug\touchcursor.dll') in project configuration 'Debug|Win32'. This may cause your project to build incorrectly. To correct this, please make sure that $(TargetPath) property value matches the value specified in %(Link.OutputFile).</span></td></tr><tr name="WarningRowClassdll"><td class="IconWarningEncoded"><a name="dllWarning" /></td><td class="messageCell"><strong>touchcursordll\dll.vcproj:
+        </strong><span>MSB8012: $(TargetPath) ('C:\martin\code\touchcursor\bin\Release\dll.dll') does not match the Librarian's OutputFile property value '..\bin\Release\dll.dll' ('C:\martin\code\bin\Release\dll.dll') in project configuration 'Release|Win32'. This may cause your project to build incorrectly. To correct this, please make sure that $(TargetPath) property value matches the value specified in %(Lib.OutputFile).</span></td></tr><tr name="WarningRowClassdll"><td class="IconWarningEncoded"><a name="dllWarning" /></td><td class="messageCell"><strong>touchcursordll\dll.vcproj:
+        </strong><span>MSB8012: $(TargetName) ('dll') does not match the Linker's OutputFile property value '..\bin\Release\touchcursor.dll' ('touchcursor') in project configuration 'Release|Win32'. This may cause your project to build incorrectly. To correct this, please make sure that $(TargetName) property value matches the value specified in %(Link.OutputFile).</span></td></tr><tr name="WarningRowClassdll"><td class="IconWarningEncoded"><a name="dllWarning" /></td><td class="messageCell"><strong>touchcursordll\dll.vcproj:
+        </strong><span>MSB8012: $(TargetPath) ('C:\martin\code\touchcursor\bin\Release\dll.dll') does not match the Linker's OutputFile property value '..\bin\Release\touchcursor.dll' ('C:\martin\code\bin\Release\touchcursor.dll') in project configuration 'Release|Win32'. This may cause your project to build incorrectly. To correct this, please make sure that $(TargetPath) property value matches the value specified in %(Link.OutputFile).</span></td></tr><tr name="MessageRowHeaderShowdll"><td class="IconInfoEncoded" /><td class="messageCell"><a _locID="ShowAdditionalMessages" href="#" name="dllMessage" onclick="ToggleMessageVisibility('dll'); return false;">
+          Show 6 additional messages
+        </a></td></tr><tr name="MessageRowClassdll" style="display: none"><td class="IconInfoEncoded"><a name="dllMessage" /></td><td class="messageCell"><strong>touchcursordll\dll.vcproj:
+        </strong><span>Converting project file 'C:\martin\code\touchcursor\touchcursordll\dll.vcproj'.</span></td></tr><tr name="MessageRowClassdll" style="display: none"><td class="IconInfoEncoded"><a name="dllMessage" /></td><td class="messageCell"><strong>touchcursor.vsprops:
+        </strong><span>Converting propertysheet file 'C:\martin\code\touchcursor\touchcursor.vsprops' for configuration 'Debug|Win32'.</span></td></tr><tr name="MessageRowClassdll" style="display: none"><td class="IconInfoEncoded"><a name="dllMessage" /></td><td class="messageCell"><strong>touchcursor.vsprops:
+        </strong><span>Done converting to new property sheet file 'C:\martin\code\touchcursor\touchcursor.vsprops' for configuration 'Debug|Win32'.</span></td></tr><tr name="MessageRowClassdll" style="display: none"><td class="IconInfoEncoded"><a name="dllMessage" /></td><td class="messageCell"><strong>touchcursor.vsprops:
+        </strong><span>Converting propertysheet file 'C:\martin\code\touchcursor\touchcursor.vsprops' for configuration 'Release|Win32'.</span></td></tr><tr name="MessageRowClassdll" style="display: none"><td class="IconInfoEncoded"><a name="dllMessage" /></td><td class="messageCell"><strong>touchcursor.vsprops:
+        </strong><span>Done converting to new property sheet file 'C:\martin\code\touchcursor\touchcursor.vsprops' for configuration 'Release|Win32'.</span></td></tr><tr name="MessageRowClassdll" style="display: none"><td class="IconInfoEncoded"><a name="dllMessage" /></td><td class="messageCell"><strong>touchcursordll\dll.vcproj:
+        </strong><span>Done converting to new project file 'C:\martin\code\touchcursor\touchcursordll\dll.vcxproj'.</span></td></tr><tr style="display: none" name="MessageRowHeaderHidedll"><td class="IconInfoEncoded" /><td class="messageCell"><a _locID="HideAdditionalMessages" href="#" name="dllMessage" onclick="ToggleMessageVisibility('dll'); return false;">
+          Hide 6 additional messages
+        </a></td></tr></table><a name="tcconfig" /><h3>tcconfig</h3><table><tr id="tcconfigHeaderRow"><th></th><th class="messageCell" _locID="MessageTableHeader">Message</th></tr><tr name="WarningRowClasstcconfig"><td class="IconWarningEncoded"><a name="tcconfigWarning" /></td><td class="messageCell"><strong>touchcursor.vsprops:
+        </strong><span>Attribute 'ProjectType' of 'touchcursor' is not supported in this version and has been removed during conversion.</span></td></tr><tr name="WarningRowClasstcconfig"><td class="IconWarningEncoded"><a name="tcconfigWarning" /></td><td class="messageCell"><strong>touchcursor.vsprops:
+        </strong><span>Attribute 'Version' of 'touchcursor' is not supported in this version and has been removed during conversion.</span></td></tr><tr name="WarningRowClasstcconfig"><td class="IconWarningEncoded"><a name="tcconfigWarning" /></td><td class="messageCell"><strong>touchcursorconfig\tcconfig.vcproj:
+        </strong><span>VCWebServiceProxyGeneratorTool is no longer supported. The tool has been removed from your project settings.</span></td></tr><tr name="WarningRowClasstcconfig"><td class="IconWarningEncoded"><a name="tcconfigWarning" /></td><td class="messageCell"><strong>touchcursorconfig\tcconfig.vcproj:
+        </strong><span>MSB8012: $(TargetPath) ('C:\martin\code\touchcursor\bin\Debug\tcconfig.exe') does not match the Librarian's OutputFile property value '../bin/Debug\tcconfig.exe' ('C:\martin\code\touchcursor\../bin/Debug\tcconfig.exe') in project configuration 'Debug|Win32'. This may cause your project to build incorrectly. To correct this, please make sure that $(TargetPath) property value matches the value specified in %(Lib.OutputFile).</span></td></tr><tr name="WarningRowClasstcconfig"><td class="IconWarningEncoded"><a name="tcconfigWarning" /></td><td class="messageCell"><strong>touchcursorconfig\tcconfig.vcproj:
+        </strong><span>MSB8012: $(TargetPath) ('C:\martin\code\touchcursor\bin\Debug\tcconfig.exe') does not match the Linker's OutputFile property value '../bin/Debug\tcconfig.exe' ('C:\martin\code\touchcursor\../bin/Debug\tcconfig.exe') in project configuration 'Debug|Win32'. This may cause your project to build incorrectly. To correct this, please make sure that $(TargetPath) property value matches the value specified in %(Link.OutputFile).</span></td></tr><tr name="WarningRowClasstcconfig"><td class="IconWarningEncoded"><a name="tcconfigWarning" /></td><td class="messageCell"><strong>touchcursorconfig\tcconfig.vcproj:
+        </strong><span>MSB8012: $(TargetPath) ('C:\martin\code\touchcursor\bin\Release\tcconfig.exe') does not match the Librarian's OutputFile property value '..\bin\Release\tcconfig.exe' ('C:\martin\code\bin\Release\tcconfig.exe') in project configuration 'Release|Win32'. This may cause your project to build incorrectly. To correct this, please make sure that $(TargetPath) property value matches the value specified in %(Lib.OutputFile).</span></td></tr><tr name="WarningRowClasstcconfig"><td class="IconWarningEncoded"><a name="tcconfigWarning" /></td><td class="messageCell"><strong>touchcursorconfig\tcconfig.vcproj:
+        </strong><span>MSB8012: $(TargetPath) ('C:\martin\code\touchcursor\bin\Release\tcconfig.exe') does not match the Linker's OutputFile property value '..\bin\Release\tcconfig.exe' ('C:\martin\code\bin\Release\tcconfig.exe') in project configuration 'Release|Win32'. This may cause your project to build incorrectly. To correct this, please make sure that $(TargetPath) property value matches the value specified in %(Link.OutputFile).</span></td></tr><tr name="MessageRowHeaderShowtcconfig"><td class="IconInfoEncoded" /><td class="messageCell"><a _locID="ShowAdditionalMessages" href="#" name="tcconfigMessage" onclick="ToggleMessageVisibility('tcconfig'); return false;">
+          Show 6 additional messages
+        </a></td></tr><tr name="MessageRowClasstcconfig" style="display: none"><td class="IconInfoEncoded"><a name="tcconfigMessage" /></td><td class="messageCell"><strong>touchcursorconfig\tcconfig.vcproj:
+        </strong><span>Converting project file 'C:\martin\code\touchcursor\touchcursorconfig\tcconfig.vcproj'.</span></td></tr><tr name="MessageRowClasstcconfig" style="display: none"><td class="IconInfoEncoded"><a name="tcconfigMessage" /></td><td class="messageCell"><strong>touchcursor.vsprops:
+        </strong><span>Converting propertysheet file 'C:\martin\code\touchcursor\touchcursor.vsprops' for configuration 'Debug|Win32'.</span></td></tr><tr name="MessageRowClasstcconfig" style="display: none"><td class="IconInfoEncoded"><a name="tcconfigMessage" /></td><td class="messageCell"><strong>touchcursor.vsprops:
+        </strong><span>Done converting to new property sheet file 'C:\martin\code\touchcursor\touchcursor.vsprops' for configuration 'Debug|Win32'.</span></td></tr><tr name="MessageRowClasstcconfig" style="display: none"><td class="IconInfoEncoded"><a name="tcconfigMessage" /></td><td class="messageCell"><strong>touchcursor.vsprops:
+        </strong><span>Converting propertysheet file 'C:\martin\code\touchcursor\touchcursor.vsprops' for configuration 'Release|Win32'.</span></td></tr><tr name="MessageRowClasstcconfig" style="display: none"><td class="IconInfoEncoded"><a name="tcconfigMessage" /></td><td class="messageCell"><strong>touchcursor.vsprops:
+        </strong><span>Done converting to new property sheet file 'C:\martin\code\touchcursor\touchcursor.vsprops' for configuration 'Release|Win32'.</span></td></tr><tr name="MessageRowClasstcconfig" style="display: none"><td class="IconInfoEncoded"><a name="tcconfigMessage" /></td><td class="messageCell"><strong>touchcursorconfig\tcconfig.vcproj:
+        </strong><span>Done converting to new project file 'C:\martin\code\touchcursor\touchcursorconfig\tcconfig.vcxproj'.</span></td></tr><tr style="display: none" name="MessageRowHeaderHidetcconfig"><td class="IconInfoEncoded" /><td class="messageCell"><a _locID="HideAdditionalMessages" href="#" name="tcconfigMessage" onclick="ToggleMessageVisibility('tcconfig'); return false;">
+          Hide 6 additional messages
+        </a></td></tr></table><a name="tclib" /><h3>tclib</h3><table><tr id="tclibHeaderRow"><th></th><th class="messageCell" _locID="MessageTableHeader">Message</th></tr><tr name="WarningRowClasstclib"><td class="IconWarningEncoded"><a name="tclibWarning" /></td><td class="messageCell"><strong>tclib\tclib.vcproj:
+        </strong><span>VCWebServiceProxyGeneratorTool is no longer supported. The tool has been removed from your project settings.</span></td></tr><tr name="WarningRowClasstclib"><td class="IconWarningEncoded"><a name="tclibWarning" /></td><td class="messageCell"><strong>tclib\tclib.vcproj:
+        </strong><span>MSB8012: $(TargetPath) ('C:\martin\code\touchcursor\tclib\Debug\tclib.lib') does not match the Librarian's OutputFile property value 'Debug\tclib.lib' ('C:\martin\code\touchcursor\Debug\tclib.lib') in project configuration 'Debug|Win32'. This may cause your project to build incorrectly. To correct this, please make sure that $(TargetPath) property value matches the value specified in %(Lib.OutputFile).</span></td></tr><tr name="WarningRowClasstclib"><td class="IconWarningEncoded"><a name="tclibWarning" /></td><td class="messageCell"><strong>tclib\tclib.vcproj:
+        </strong><span>MSB8012: $(TargetPath) ('C:\martin\code\touchcursor\tclib\Debug\tclib.lib') does not match the Linker's OutputFile property value 'Debug\tclib.lib' ('C:\martin\code\touchcursor\Debug\tclib.lib') in project configuration 'Debug|Win32'. This may cause your project to build incorrectly. To correct this, please make sure that $(TargetPath) property value matches the value specified in %(Link.OutputFile).</span></td></tr><tr name="WarningRowClasstclib"><td class="IconWarningEncoded"><a name="tclibWarning" /></td><td class="messageCell"><strong>tclib\tclib.vcproj:
+        </strong><span>MSB8012: $(TargetPath) ('C:\martin\code\touchcursor\tclib\Release\tclib.lib') does not match the Librarian's OutputFile property value 'Release\tclib.lib' ('C:\martin\code\touchcursor\Release\tclib.lib') in project configuration 'Release|Win32'. This may cause your project to build incorrectly. To correct this, please make sure that $(TargetPath) property value matches the value specified in %(Lib.OutputFile).</span></td></tr><tr name="WarningRowClasstclib"><td class="IconWarningEncoded"><a name="tclibWarning" /></td><td class="messageCell"><strong>tclib\tclib.vcproj:
+        </strong><span>MSB8012: $(TargetPath) ('C:\martin\code\touchcursor\tclib\Release\tclib.lib') does not match the Linker's OutputFile property value 'Release\tclib.lib' ('C:\martin\code\touchcursor\Release\tclib.lib') in project configuration 'Release|Win32'. This may cause your project to build incorrectly. To correct this, please make sure that $(TargetPath) property value matches the value specified in %(Link.OutputFile).</span></td></tr><tr name="MessageRowHeaderShowtclib"><td class="IconInfoEncoded" /><td class="messageCell"><a _locID="ShowAdditionalMessages" href="#" name="tclibMessage" onclick="ToggleMessageVisibility('tclib'); return false;">
+          Show 6 additional messages
+        </a></td></tr><tr name="MessageRowClasstclib" style="display: none"><td class="IconInfoEncoded"><a name="tclibMessage" /></td><td class="messageCell"><strong>tclib\tclib.vcproj:
+        </strong><span>Converting project file 'C:\martin\code\touchcursor\tclib\tclib.vcproj'.</span></td></tr><tr name="MessageRowClasstclib" style="display: none"><td class="IconInfoEncoded"><a name="tclibMessage" /></td><td class="messageCell"><strong>touchcursor.vsprops:
+        </strong><span>Converting propertysheet file 'C:\martin\code\touchcursor\touchcursor.vsprops' for configuration 'Debug|Win32'.</span></td></tr><tr name="MessageRowClasstclib" style="display: none"><td class="IconInfoEncoded"><a name="tclibMessage" /></td><td class="messageCell"><strong>touchcursor.vsprops:
+        </strong><span>Done converting to new property sheet file 'C:\martin\code\touchcursor\touchcursor.vsprops' for configuration 'Debug|Win32'.</span></td></tr><tr name="MessageRowClasstclib" style="display: none"><td class="IconInfoEncoded"><a name="tclibMessage" /></td><td class="messageCell"><strong>touchcursor.vsprops:
+        </strong><span>Converting propertysheet file 'C:\martin\code\touchcursor\touchcursor.vsprops' for configuration 'Release|Win32'.</span></td></tr><tr name="MessageRowClasstclib" style="display: none"><td class="IconInfoEncoded"><a name="tclibMessage" /></td><td class="messageCell"><strong>touchcursor.vsprops:
+        </strong><span>Done converting to new property sheet file 'C:\martin\code\touchcursor\touchcursor.vsprops' for configuration 'Release|Win32'.</span></td></tr><tr name="MessageRowClasstclib" style="display: none"><td class="IconInfoEncoded"><a name="tclibMessage" /></td><td class="messageCell"><strong>tclib\tclib.vcproj:
+        </strong><span>Done converting to new project file 'C:\martin\code\touchcursor\tclib\tclib.vcxproj'.</span></td></tr><tr style="display: none" name="MessageRowHeaderHidetclib"><td class="IconInfoEncoded" /><td class="messageCell"><a _locID="HideAdditionalMessages" href="#" name="tclibMessage" onclick="ToggleMessageVisibility('tclib'); return false;">
+          Hide 6 additional messages
+        </a></td></tr></table><a name="touchcursor" /><h3>touchcursor</h3><table><tr id="touchcursorHeaderRow"><th></th><th class="messageCell" _locID="MessageTableHeader">Message</th></tr><tr name="WarningRowClasstouchcursor"><td class="IconWarningEncoded"><a name="touchcursorWarning" /></td><td class="messageCell"><strong>touchcursor\touchcursor.vcproj:
+        </strong><span>VCWebServiceProxyGeneratorTool is no longer supported. The tool has been removed from your project settings.</span></td></tr><tr name="WarningRowClasstouchcursor"><td class="IconWarningEncoded"><a name="touchcursorWarning" /></td><td class="messageCell"><strong>touchcursor\touchcursor.vcproj:
+        </strong><span>MSB8012: $(TargetPath) ('C:\martin\code\touchcursor\bin\Debug\touchcursor.exe') does not match the Librarian's OutputFile property value '..\bin\Debug\touchcursor.exe' ('C:\martin\code\bin\Debug\touchcursor.exe') in project configuration 'Debug|Win32'. This may cause your project to build incorrectly. To correct this, please make sure that $(TargetPath) property value matches the value specified in %(Lib.OutputFile).</span></td></tr><tr name="WarningRowClasstouchcursor"><td class="IconWarningEncoded"><a name="touchcursorWarning" /></td><td class="messageCell"><strong>touchcursor\touchcursor.vcproj:
+        </strong><span>MSB8012: $(TargetPath) ('C:\martin\code\touchcursor\bin\Debug\touchcursor.exe') does not match the Linker's OutputFile property value '..\bin\Debug\touchcursor.exe' ('C:\martin\code\bin\Debug\touchcursor.exe') in project configuration 'Debug|Win32'. This may cause your project to build incorrectly. To correct this, please make sure that $(TargetPath) property value matches the value specified in %(Link.OutputFile).</span></td></tr><tr name="WarningRowClasstouchcursor"><td class="IconWarningEncoded"><a name="touchcursorWarning" /></td><td class="messageCell"><strong>touchcursor\touchcursor.vcproj:
+        </strong><span>MSB8012: $(TargetPath) ('C:\martin\code\touchcursor\bin\Release\touchcursor.exe') does not match the Librarian's OutputFile property value '..\bin\Release\touchcursor.exe' ('C:\martin\code\bin\Release\touchcursor.exe') in project configuration 'Release|Win32'. This may cause your project to build incorrectly. To correct this, please make sure that $(TargetPath) property value matches the value specified in %(Lib.OutputFile).</span></td></tr><tr name="WarningRowClasstouchcursor"><td class="IconWarningEncoded"><a name="touchcursorWarning" /></td><td class="messageCell"><strong>touchcursor\touchcursor.vcproj:
+        </strong><span>MSB8012: $(TargetPath) ('C:\martin\code\touchcursor\bin\Release\touchcursor.exe') does not match the Linker's OutputFile property value '..\bin\Release\touchcursor.exe' ('C:\martin\code\bin\Release\touchcursor.exe') in project configuration 'Release|Win32'. This may cause your project to build incorrectly. To correct this, please make sure that $(TargetPath) property value matches the value specified in %(Link.OutputFile).</span></td></tr><tr name="MessageRowHeaderShowtouchcursor"><td class="IconInfoEncoded" /><td class="messageCell"><a _locID="ShowAdditionalMessages" href="#" name="touchcursorMessage" onclick="ToggleMessageVisibility('touchcursor'); return false;">
+          Show 2 additional messages
+        </a></td></tr><tr name="MessageRowClasstouchcursor" style="display: none"><td class="IconInfoEncoded"><a name="touchcursorMessage" /></td><td class="messageCell"><strong>touchcursor\touchcursor.vcproj:
+        </strong><span>Converting project file 'C:\martin\code\touchcursor\touchcursor\touchcursor.vcproj'.</span></td></tr><tr name="MessageRowClasstouchcursor" style="display: none"><td class="IconInfoEncoded"><a name="touchcursorMessage" /></td><td class="messageCell"><strong>touchcursor\touchcursor.vcproj:
+        </strong><span>Done converting to new project file 'C:\martin\code\touchcursor\touchcursor\touchcursor.vcxproj'.</span></td></tr><tr style="display: none" name="MessageRowHeaderHidetouchcursor"><td class="IconInfoEncoded" /><td class="messageCell"><a _locID="HideAdditionalMessages" href="#" name="touchcursorMessage" onclick="ToggleMessageVisibility('touchcursor'); return false;">
+          Hide 2 additional messages
+        </a></td></tr></table><a name="touchcursor_update" /><h3>touchcursor_update</h3><table><tr id="touchcursor_updateHeaderRow"><th></th><th class="messageCell" _locID="MessageTableHeader">Message</th></tr><tr name="WarningRowClasstouchcursor_update"><td class="IconWarningEncoded"><a name="touchcursor_updateWarning" /></td><td class="messageCell"><strong>touchcursor_update\touchcursor_update.vcproj:
+        </strong><span>VCWebServiceProxyGeneratorTool is no longer supported. The tool has been removed from your project settings.</span></td></tr><tr name="WarningRowClasstouchcursor_update"><td class="IconWarningEncoded"><a name="touchcursor_updateWarning" /></td><td class="messageCell"><strong>touchcursor_update\touchcursor_update.vcproj:
+        </strong><span>MSB8012: $(TargetPath) ('C:\martin\code\touchcursor\bin\Debug\touchcursor_update.exe') does not match the Librarian's OutputFile property value '..\bin\Debug\touchcursor_update.exe' ('C:\martin\code\bin\Debug\touchcursor_update.exe') in project configuration 'Debug|Win32'. This may cause your project to build incorrectly. To correct this, please make sure that $(TargetPath) property value matches the value specified in %(Lib.OutputFile).</span></td></tr><tr name="WarningRowClasstouchcursor_update"><td class="IconWarningEncoded"><a name="touchcursor_updateWarning" /></td><td class="messageCell"><strong>touchcursor_update\touchcursor_update.vcproj:
+        </strong><span>MSB8012: $(TargetPath) ('C:\martin\code\touchcursor\bin\Debug\touchcursor_update.exe') does not match the Linker's OutputFile property value '..\bin\Debug\touchcursor_update.exe' ('C:\martin\code\bin\Debug\touchcursor_update.exe') in project configuration 'Debug|Win32'. This may cause your project to build incorrectly. To correct this, please make sure that $(TargetPath) property value matches the value specified in %(Link.OutputFile).</span></td></tr><tr name="WarningRowClasstouchcursor_update"><td class="IconWarningEncoded"><a name="touchcursor_updateWarning" /></td><td class="messageCell"><strong>touchcursor_update\touchcursor_update.vcproj:
+        </strong><span>MSB8012: $(TargetPath) ('C:\martin\code\touchcursor\bin\Release\touchcursor_update.exe') does not match the Librarian's OutputFile property value '..\bin\Release\touchcursor_update.exe' ('C:\martin\code\bin\Release\touchcursor_update.exe') in project configuration 'Release|Win32'. This may cause your project to build incorrectly. To correct this, please make sure that $(TargetPath) property value matches the value specified in %(Lib.OutputFile).</span></td></tr><tr name="WarningRowClasstouchcursor_update"><td class="IconWarningEncoded"><a name="touchcursor_updateWarning" /></td><td class="messageCell"><strong>touchcursor_update\touchcursor_update.vcproj:
+        </strong><span>MSB8012: $(TargetPath) ('C:\martin\code\touchcursor\bin\Release\touchcursor_update.exe') does not match the Linker's OutputFile property value '..\bin\Release\touchcursor_update.exe' ('C:\martin\code\bin\Release\touchcursor_update.exe') in project configuration 'Release|Win32'. This may cause your project to build incorrectly. To correct this, please make sure that $(TargetPath) property value matches the value specified in %(Link.OutputFile).</span></td></tr><tr name="MessageRowHeaderShowtouchcursor_update"><td class="IconInfoEncoded" /><td class="messageCell"><a _locID="ShowAdditionalMessages" href="#" name="touchcursor_updateMessage" onclick="ToggleMessageVisibility('touchcursor_update'); return false;">
+          Show 2 additional messages
+        </a></td></tr><tr name="MessageRowClasstouchcursor_update" style="display: none"><td class="IconInfoEncoded"><a name="touchcursor_updateMessage" /></td><td class="messageCell"><strong>touchcursor_update\touchcursor_update.vcproj:
+        </strong><span>Converting project file 'C:\martin\code\touchcursor\touchcursor_update\touchcursor_update.vcproj'.</span></td></tr><tr name="MessageRowClasstouchcursor_update" style="display: none"><td class="IconInfoEncoded"><a name="touchcursor_updateMessage" /></td><td class="messageCell"><strong>touchcursor_update\touchcursor_update.vcproj:
+        </strong><span>Done converting to new project file 'C:\martin\code\touchcursor\touchcursor_update\touchcursor_update.vcxproj'.</span></td></tr><tr style="display: none" name="MessageRowHeaderHidetouchcursor_update"><td class="IconInfoEncoded" /><td class="messageCell"><a _locID="HideAdditionalMessages" href="#" name="touchcursor_updateMessage" onclick="ToggleMessageVisibility('touchcursor_update'); return false;">
+          Hide 2 additional messages
+        </a></td></tr></table><a name="Solution" /><h3 _locID="ProjectDisplayNameHeader">Solution</h3><table><tr id="SolutionHeaderRow"><th></th><th class="messageCell" _locID="MessageTableHeader">Message</th></tr><tr name="WarningRowClassSolution"><td class="IconWarningEncoded"><a name="SolutionWarning" /></td><td class="messageCell"><strong>touchcursor.sln:
+        </strong><span>Visual Studio needs to make non-functional changes to this project in order to enable the project to open in released versions of Visual Studio newer than Visual Studio 2010 SP1 without impacting project behavior.</span></td></tr><tr name="MessageRowHeaderShowSolution"><td class="IconInfoEncoded" /><td class="messageCell"><a _locID="ShowAdditionalMessages" href="#" name="SolutionMessage" onclick="ToggleMessageVisibility('Solution'); return false;">
+          Show 2 additional messages
+        </a></td></tr><tr name="MessageRowClassSolution" style="display: none"><td class="IconInfoEncoded"><a name="SolutionMessage" /></td><td class="messageCell"><strong>touchcursor.sln:
+        </strong><span>File successfully backed up as C:\martin\code\touchcursor\Backup\touchcursor.sln</span></td></tr><tr name="MessageRowClassSolution" style="display: none"><td class="IconInfoEncoded"><a name="SolutionMessage" /></td><td class="messageCell"><strong>touchcursor.sln:
+        </strong><span>Solution migrated successfully</span></td></tr><tr style="display: none" name="MessageRowHeaderHideSolution"><td class="IconInfoEncoded" /><td class="messageCell"><a _locID="HideAdditionalMessages" href="#" name="SolutionMessage" onclick="ToggleMessageVisibility('Solution'); return false;">
+          Hide 2 additional messages
+        </a></td></tr></table></div></div></body></html>

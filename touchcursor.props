@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ImportGroup Label="PropertySheets">
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros">
+    <WXWIDGETS_DIR>..\..\..\external\wxMSW-2.8.0</WXWIDGETS_DIR>
+    <BOOST_DIR>..\..\..\external\boost_1_39_0</BOOST_DIR>
+  </PropertyGroup>
+  <PropertyGroup>
+    <_ProjectFileVersion>17.0.33205.214</_ProjectFileVersion>
+  </PropertyGroup>
+  <ItemDefinitionGroup />
+  <ItemGroup>
+    <BuildMacro Include="WXWIDGETS_DIR">
+      <Value>$(WXWIDGETS_DIR)</Value>
+    </BuildMacro>
+    <BuildMacro Include="BOOST_DIR">
+      <Value>$(BOOST_DIR)</Value>
+    </BuildMacro>
+  </ItemGroup>
+</Project>
