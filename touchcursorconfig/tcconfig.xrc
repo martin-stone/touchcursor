@@ -277,7 +277,7 @@
                             <flag>wxLEFT|wxRIGHT|wxEXPAND</flag>
                           </object>
                           <cols>1</cols>
-                          <rows>4</rows>
+                          <rows>0</rows>
                           <vgap>12</vgap>
                           <growablecols>0</growablecols>
                           <growablerows>3</growablerows>
@@ -358,7 +358,7 @@ of the program you want to select:</label>
           <object class="sizeritem">
             <object class="wxFlexGridSizer">
               <cols>2</cols>
-              <rows>1</rows>
+              <rows>0</rows>
               <hgap>8</hgap>
               <growablecols>0</growablecols>
               <object class="sizeritem">

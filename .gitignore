@@ -1,0 +1,32 @@
+# Build outputs
+bin/
+*/bin/
+Debug/
+Release/
+*/Debug/
+*/Release/
+*.obj
+*.pdb
+*.lib
+*.exp
+*.ilk
+*.tlog
+*.lastbuildstate
+*.res
+*.idb
+*.map
+
+# Visual Studio temporary files
+.vs/
+*.suo
+*.user
+*.ncb
+*.sdf
+*.opensdf
+
+# Distribution and packaging
+*.zip
+setup/TouchCursor/
+
+# Antigravity/Agent folder
+.gemini/
