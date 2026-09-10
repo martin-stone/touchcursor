@@ -7,17 +7,17 @@ Dependencies
 C++ Libraries
 -------------
 
-* wxWidgets 2.8 (unicode builds)
-* boost 1.39 (later may also work)
+* wxWidgets 3.2 (static unicode 32-bit / x86 build)
+* Boost 1.86 (x86 MSVC prebuilt binaries; requires compiled boost_serialization)
 
 The location of these libraries can be configured by editing 
-touchcursor.vsprops.
+touchcursor.props.
 
 Tools
 -----
 
-* Microsoft Visual Studio 2008 
-(Haven't tried VC++ Express)
+* Microsoft Visual Studio 2022 or 2026 (Community or higher)
+  with the "Desktop development with C++" workload (x86 / Win32 toolset)
 
 Scripts that build the installer and docs require:
 
@@ -32,10 +32,9 @@ Building
 
 Run build.bat to build executables and docs and package them into zip and 
 installer files. Alternatively, load touchcursor.sln into Visual Studio and 
-build in the IDE to build the executables only.
+build in the IDE, or use MSBuild directly from the command line:
 
-If your Visual Studio installation is not at the location used in the batch
-file, you'll need to edit it.
+    msbuild touchcursor.sln /p:Configuration=Release /p:Platform=Win32
 
 
 Project Directories
@@ -50,7 +49,7 @@ touchcursordll
     the keyboard hook function. (Windows requires this to be in a DLL rather than
     an exe.)
 
-tcconfig
+touchcursorconfig
     Source for tcconfig.exe, which edits the configuration file. This was 
     implemented as separate program to keep the memory usage of the permanently
     running modules low.
@@ -75,7 +74,7 @@ docs
 License & Copyright
 ===================
 
-Copyright © 2010 Martin Stone.
+Copyright Â© 2010 Martin Stone.
 
 TouchCursor is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by

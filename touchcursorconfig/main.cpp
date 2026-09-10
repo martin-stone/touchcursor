@@ -1,4 +1,4 @@
-// Copyright © 2010 Martin Stone.
+// Copyright Â© 2010 Martin Stone.
 // 
 // This file is part of TouchCursor.
 // 
@@ -413,21 +413,7 @@ private:
             if (found) return false;
         }
 
-        wxXmlResource::Get()->AddHandler(new wxFrameXmlHandler);
-        wxXmlResource::Get()->AddHandler(new wxDialogXmlHandler);
-        wxXmlResource::Get()->AddHandler(new wxNotebookXmlHandler);
-        wxXmlResource::Get()->AddHandler(new wxPanelXmlHandler);
-        wxXmlResource::Get()->AddHandler(new wxCheckBoxXmlHandler);
-        wxXmlResource::Get()->AddHandler(new wxRadioButtonXmlHandler);
-        wxXmlResource::Get()->AddHandler(new wxChoiceXmlHandler);
-        wxXmlResource::Get()->AddHandler(new wxListBoxXmlHandler);
-        wxXmlResource::Get()->AddHandler(new wxButtonXmlHandler);
-        wxXmlResource::Get()->AddHandler(new wxStaticTextXmlHandler);
-        wxXmlResource::Get()->AddHandler(new wxTextCtrlXmlHandler);
-        wxXmlResource::Get()->AddHandler(new wxSizerXmlHandler);
-        wxXmlResource::Get()->AddHandler(new wxStaticBitmapXmlHandler);
-        wxXmlResource::Get()->AddHandler(new wxStaticLineXmlHandler);
-        wxXmlResource::Get()->AddHandler(new wxHtmlWindowXmlHandler);
+        wxXmlResource::Get()->InitAllHandlers();
 
         InitXmlResource();
 
