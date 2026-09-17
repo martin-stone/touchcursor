@@ -1,4 +1,4 @@
-// Copyright © 2010 Martin Stone.
+// Copyright Â© 2010 Martin Stone.
 // 
 // This file is part of TouchCursor.
 // 
@@ -53,6 +53,7 @@ struct Options {
     StringVec onlyTrainProgs;
     bool useEnableList;
     bool useOnlyTrainList;
+    bool disableWithFullscreen;
 };
 
 

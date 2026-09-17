@@ -22,6 +22,9 @@ if not defined MSBUILD (
 %MSBUILD% touchcursor.sln /p:Configuration=Release /p:Platform=Win32 /t:Rebuild /m /nologo
 if errorlevel 1 exit /b %errorlevel%
 
+if not exist bin\Release\docs md bin\Release\docs
+copy docs\*.* bin\Release\docs >nul
+
 echo.
 echo Building distribution...
 echo.

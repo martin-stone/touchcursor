@@ -49,11 +49,63 @@ namespace {
         // a handle to the first shortcut menu. 
         HMENU hmenuTrackPopup = GetSubMenu(hmenu, 0);
 
-        // Display the shortcut menu. 
-        DWORD command = TrackPopupMenu(hmenuTrackPopup, 
-                TPM_LEFTALIGN | TPM_RIGHTBUTTON | TPM_RETURNCMD, 
-                pt.x, pt.y, 0, hwnd, NULL); 
-     
+        HMONITOR hmon = MonitorFromPoint(pt, MONITOR_DEFAULTTONEAREST);
+        MONITORINFO mi = { sizeof(mi) };
+        GetMonitorInfo(hmon, &mi);
+
+        // Find the window under the cursor (either the taskbar or the overflow flyout)
+        HWND w = WindowFromPoint(pt);
+        HWND root = w ? GetAncestor(w, GA_ROOT) : NULL;
+        RECT rect = {0};
+        bool gotRect = false;
+        if (root && root != hwnd && root != GetDesktopWindow()) {
+            if (GetWindowRect(root, &rect)) {
+                if (PtInRect(&rect, pt)) {
+                    gotRect = true;
+                }
+            }
+        }
+
+        TPMPARAMS tpm = { sizeof(tpm) };
+        LONG menuY;
+        UINT alignY = TPM_BOTTOMALIGN;
+
+        if (gotRect) {
+            tpm.rcExclude = rect;
+            // If the container (taskbar or flyout) is in the bottom half of the screen,
+            // place the menu's bottom edge at the top of the container so it opens upward.
+            if (rect.top > (mi.rcMonitor.top + mi.rcMonitor.bottom) / 2) {
+                menuY = rect.top;
+                alignY = TPM_BOTTOMALIGN;
+            }
+            else {
+                // If container is in the top half, open downward below it
+                menuY = rect.bottom;
+                alignY = TPM_TOPALIGN;
+            }
+        }
+        else {
+            if (pt.y >= mi.rcWork.bottom) {
+                menuY = mi.rcWork.bottom;
+                alignY = TPM_BOTTOMALIGN;
+            }
+            else {
+                menuY = pt.y;
+                alignY = TPM_BOTTOMALIGN;
+            }
+            tpm.rcExclude.left = mi.rcMonitor.left;
+            tpm.rcExclude.right = mi.rcMonitor.right;
+            tpm.rcExclude.top = mi.rcWork.bottom;
+            tpm.rcExclude.bottom = mi.rcMonitor.bottom;
+        }
+
+        DWORD command = TrackPopupMenuEx(hmenuTrackPopup, 
+                TPM_LEFTALIGN | TPM_RIGHTBUTTON | TPM_RETURNCMD | alignY, 
+                pt.x, menuY, hwnd, &tpm); 
+
+        // Required: without this the menu won't appear on subsequent right-clicks
+        PostMessage(hwnd, WM_NULL, 0, 0);
+
         DestroyMenu(hmenu);
         return command;
     }
@@ -115,6 +167,7 @@ INT_PTR CALLBACK DialogProc(HWND hwnd, UINT message, WPARAM wParam, LPARAM lPara
             switch (lParam) {
                 case WM_CONTEXTMENU:
                 case WM_RBUTTONDOWN:
+                case WM_RBUTTONUP:
                 {
                     SetForegroundWindow(hwnd);
                     DWORD command = showMenu(hwnd);

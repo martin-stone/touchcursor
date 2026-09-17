@@ -78,6 +78,27 @@ void LaunchLocalHtml(const wchar_t* filename) {
     else {
         // relative: Make absolute
         PrefixProgramFolder(path, filename);
+        if (GetFileAttributes(path) == INVALID_FILE_ATTRIBUTES) {
+            // Check relative parent folders (e.g. running from bin\Release during dev)
+            wchar_t devPath[MAX_PATH];
+            PrefixProgramFolder(devPath, L"..\\..\\");
+            lstrcat(devPath, filename);
+            if (GetFileAttributes(devPath) != INVALID_FILE_ATTRIBUTES) {
+                lstrcpy(path, devPath);
+            }
+            else {
+                PrefixProgramFolder(devPath, L"..\\");
+                lstrcat(devPath, filename);
+                if (GetFileAttributes(devPath) != INVALID_FILE_ATTRIBUTES) {
+                    lstrcpy(path, devPath);
+                }
+                else {
+                    // Fallback to online documentation if local help.html is not found
+                    LaunchUrl(L"https://github.com/Jason-A-Hansen/touchcursor");
+                    return;
+                }
+            }
+        }
     }
 
     LaunchUrl(path);

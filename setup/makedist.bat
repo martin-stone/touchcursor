@@ -1,6 +1,6 @@
 @echo off
 
-set VERSION=1.7.1
+set VERSION=1.7.2
 set INSTALLER_NAME=TouchCursorSetup-%VERSION%
 set ZIP_NAME=TouchCursor-%VERSION%
 
@@ -20,8 +20,7 @@ if errorlevel 1 exit %errorlevel%
 copy ..\bin\release\touchcursor_update.exe TouchCursor
 if errorlevel 1 exit %errorlevel%
 
-make_docs.py TouchCursor\docs
-if errorlevel 1 exit %errorlevel%
+copy ..\docs\*.* TouchCursor\docs >nul
 
 copy ..\COPYING.txt TouchCursor
 if errorlevel 1 exit %errorlevel%

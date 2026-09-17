@@ -33,7 +33,7 @@
 #include <windows.h>
 #include <shlobj.h>
 
-BOOST_CLASS_VERSION(Options, 6)
+BOOST_CLASS_VERSION(Options, 7)
 
 
 namespace {
@@ -166,6 +166,9 @@ namespace boost {
             if (version < 6) { // first open source version
                 // just ignore old key stuff
             }
+            if (version >= 7) { // disableWithFullscreen option
+                ar & opts.disableWithFullscreen;
+            }
         }
     } 
 } 
@@ -182,6 +185,7 @@ Options::Options(InitOpt opt)
     , activationKey(VK_SPACE)
     , useEnableList(false)  
     , useOnlyTrainList(false)
+    , disableWithFullscreen(false)
 {
     setDefaultMapping(keyMapping);
 

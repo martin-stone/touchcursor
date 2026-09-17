@@ -565,7 +565,10 @@ namespace {
                 wchar_t exeName[MAX_PATH];
                 win32funcs::GetWindowExeName(exeName, MAX_PATH, GetForegroundWindow());
 
-                if (mappingEnabledFor(exeName)) {
+                if (options.disableWithFullscreen && win32funcs::IsForegroundWindowFullscreen()) {
+                    // pass through; fullscreen app (e.g. game) has focus
+                }
+                else if (mappingEnabledFor(exeName)) {
                     if (options.trainingMode && !allowedInTrainingMode(h->vkCode) && trainingEnabledFor(exeName)) {
                         if (options.beepForMistakes && isKeyDown(wParam)) MessageBeep(MB_OK);
                         return discard;

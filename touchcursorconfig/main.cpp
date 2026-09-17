@@ -169,6 +169,9 @@ public:
             sizer->Add(new wxStaticText(Programs, -1, wxT("Training Mode")));
             neverTrainProgs.reset(new ProgList(wxT("&Never train in the following programs"), Programs, sizer, true));
             onlyTrainProgs.reset(new ProgList(wxT("&Only train in the following programs"), Programs, sizer, false));
+            sizer->AddSpacer(8);
+            disableWithFullscreenCheck = new wxCheckBox(Programs, -1, wxT("&Disable with games / fullscreen apps"));
+            sizer->Add(disableWithFullscreenCheck);
         }
     }
 
@@ -217,6 +220,7 @@ public:
 
         tempOpts.useEnableList = enableProgs->IsEnabled();
         tempOpts.useOnlyTrainList = onlyTrainProgs->IsEnabled();
+        tempOpts.disableWithFullscreen = disableWithFullscreenCheck->GetValue();
 
         return tempOpts;
     }
@@ -246,6 +250,7 @@ public:
 
         enableProgs->Enable(options.useEnableList);
         onlyTrainProgs->Enable(options.useOnlyTrainList);
+        disableWithFullscreenCheck->SetValue(options.disableWithFullscreen);
     }
 
     void applyChanges() {
@@ -367,6 +372,7 @@ private:
     boost::scoped_ptr<ProgList> enableProgs;
     boost::scoped_ptr<ProgList> neverTrainProgs;
     boost::scoped_ptr<ProgList> onlyTrainProgs;
+    wxCheckBox* disableWithFullscreenCheck;
     std::wstring pendingRegKey;
     DECLARE_EVENT_TABLE();
 };

@@ -33,6 +33,7 @@ namespace win32funcs {
     const wchar_t* VkCodeToStr(int vkCode);
     bool IsModifierKey(int vkCode);
     int DiscriminateLeftRightModifierJustPressed(int vkCode);
+    bool IsForegroundWindowFullscreen();
 }
 
 

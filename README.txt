@@ -19,11 +19,9 @@ Tools
 * Microsoft Visual Studio 2022 or 2026 (Community or higher)
   with the "Desktop development with C++" workload (x86 / Win32 toolset)
 
-Scripts that build the installer and docs require:
+Scripts that package the release and build the installer require:
 
 * InnoSetup >=v5.2.2 (http://www.jrsoftware.org/isinfo.php)
-* Python >=v2.4 (http://python.org)
-* Python markdown library (http://pypi.python.org/pypi/Markdown)
 * 7zip (http://www.7-zip.org/)
 
 
@@ -67,8 +65,7 @@ setup
     Source, scripts and dependencies for building the installer.
 
 docs
-    Source for the help file. The text is in Markdown format. The html is built
-    by a script in the setup directory.
+    Source and HTML for the help documentation.
 
 
 License & Copyright

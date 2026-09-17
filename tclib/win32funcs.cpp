@@ -348,4 +348,18 @@ namespace win32funcs {
             || code == VK_RWIN
             ;
     }
+
+    bool IsForegroundWindowFullscreen() {
+        HWND hwnd = GetForegroundWindow();
+        if (!hwnd) return false;
+        RECT windowRect;
+        GetWindowRect(hwnd, &windowRect);
+        HMONITOR hmon = MonitorFromWindow(hwnd, MONITOR_DEFAULTTONEAREST);
+        MONITORINFO mi = { sizeof(mi) };
+        GetMonitorInfo(hmon, &mi);
+        return windowRect.left   <= mi.rcMonitor.left
+            && windowRect.top    <= mi.rcMonitor.top
+            && windowRect.right  >= mi.rcMonitor.right
+            && windowRect.bottom >= mi.rcMonitor.bottom;
+    }
 }
