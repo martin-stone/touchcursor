@@ -147,8 +147,23 @@ public:
     MainFrame() {
         SetBackgroundColour(GetChildren()[0]->GetBackgroundColour());
         createProgramsPage();
-        populateActivationKeyList();
+        createSecondActivationKeyControl();
+        populateActivationKeyLists();
         sendOptionsToControls(options);
+        // The second selector is added after XRC sets the original window size.
+        // Recalculate sizes after populating both choices so dropdowns stay visible.
+        // XRC gave the notebook a zero minimum, which hides its pages' requirements.
+        ActivationKeys->GetParent()->GetParent()->SetMinSize(wxDefaultSize);
+        for (wxWindow* parent = ActivationKeys->GetParent(); parent && parent != this; parent = parent->GetParent()) {
+            parent->InvalidateBestSize();
+        }
+        wxWindow* panel = GetChildren()[0];
+        wxSize minimum = panel->GetSizer()->CalcMin();
+        wxSize client = GetClientSize();
+        client.IncTo(minimum);
+        SetMinClientSize(minimum);
+        SetClientSize(client);
+        panel->Layout();
         KeyList->SetFont(wxSystemSettings::GetFont(wxSYS_ANSI_FIXED_FONT));
 
         wxAcceleratorEntry entries[2];
@@ -172,28 +187,52 @@ public:
         }
     }
 
-    void populateActivationKeyList() {
-        ActivationKeys->Clear();
-        //const int activationOptions[] = {VK_SPACE, VK_CAPITAL, VK_TAB, VK_OEM_1, VK_OEM_3, VK_OEM_7, 0}; //XXX win-specific codes in otherwise x-platform file :-(
-        //for (const int* p = activationOptions; *p; ++p) {
-        //    ActivationKeys->Append(win32funcs::VkCodeToStr(*p), reinterpret_cast<void*>(*p));
-        //}
+    void createSecondActivationKeyControl() {
+        wxSizer* sizer = ActivationKeys->GetContainingSizer();
+        assert(sizer);
+        wxWindow* parent = ActivationKeys->GetParent();
+        sizer->Add(new wxStaticText(parent, -1, wxT(" or ")), 0, wxLEFT|wxRIGHT|wxALIGN_CENTRE_VERTICAL, 3);
+        ActivationKeys2 = new wxChoice(parent, -1);
+        ActivationKeys2->SetToolTip(wxT("Choose an optional second key that activates the same TouchCursor bindings."));
+        sizer->Add(ActivationKeys2, 0, wxLEFT, 3);
+        parent->Layout();
+    }
+
+    void populateActivationKeyList(wxChoice* list, bool includeNone) {
+        list->Clear();
+        if (includeNone) {
+            list->Append(wxT("None"), reinterpret_cast<void*>(0));
+        }
         for (size_t i=1; i<0x100; ++i) {
             if (!win32funcs::IsModifierKey(i)) {
                 wxString name = win32funcs::VkCodeToStr(i);
                 if (!name.empty()) {
-                    ActivationKeys->Append(name, reinterpret_cast<void*>(i));
+                    list->Append(name, reinterpret_cast<void*>(i));
                 }
             }
         }
     }
 
-    int activationKeyCode(int index) const {
-        return reinterpret_cast<size_t>(ActivationKeys->GetClientData(index));
+    void populateActivationKeyLists() {
+        populateActivationKeyList(ActivationKeys, false);
+        populateActivationKeyList(ActivationKeys2, true);
     }
 
-    int selectedActivationKey() const {
-        return activationKeyCode(ActivationKeys->GetSelection());
+    int activationKeyCode(wxChoice* list, int index) const {
+        return reinterpret_cast<size_t>(list->GetClientData(index));
+    }
+
+    int selectedActivationKey(wxChoice* list) const {
+        return activationKeyCode(list, list->GetSelection());
+    }
+
+    void selectActivationKey(wxChoice* list, int keyCode) {
+        for (unsigned i=0; i<list->GetCount(); ++i) {
+            if (activationKeyCode(list, i) == keyCode) {
+                list->SetSelection(i);
+                return;
+            }
+        }
     }
 
     Options readOptionsFromControls() {
@@ -206,7 +245,8 @@ public:
         tempOpts.showInNotificationArea = ShowInNotificationArea->GetValue();
         tempOpts.checkForUpdates = CheckForUpdates->GetValue();
 
-        tempOpts.activationKey = selectedActivationKey();
+        tempOpts.activationKey = selectedActivationKey(ActivationKeys);
+        tempOpts.activationKey2 = selectedActivationKey(ActivationKeys2);
 
         MappingFromBox(tempOpts.keyMapping, tempOpts.maxCodes, KeyList);
 
@@ -229,13 +269,9 @@ public:
         ShowInNotificationArea->SetValue(options.showInNotificationArea);
         CheckForUpdates->SetValue(options.checkForUpdates);
 
-        // look up activation key option
-        for (unsigned i=0; i<ActivationKeys->GetCount(); ++i) {
-            if (activationKeyCode(i) == options.activationKey) {
-                ActivationKeys->SetSelection(i);
-                break;
-            }
-         }
+        // look up activation key options
+        selectActivationKey(ActivationKeys, options.activationKey);
+        selectActivationKey(ActivationKeys2, options.activationKey2);
 
         MappingToBox(options.keyMapping, options.maxCodes, KeyList);
 
@@ -294,16 +330,16 @@ public:
     }
 
     void onAddBindingButton(wxCommandEvent& event) {
-        AddBinding(KeyList, selectedActivationKey());
+        AddBinding(KeyList, selectedActivationKey(ActivationKeys));
         onKeyListSelChange(event);
     }
 
     void onEditBindingButton(wxCommandEvent&) {
-        EditBinding(KeyList, KeyList->GetSelection(), selectedActivationKey());
+        EditBinding(KeyList, KeyList->GetSelection(), selectedActivationKey(ActivationKeys));
     }
 
     void onEditBinding(wxCommandEvent& event) {
-        EditBinding(KeyList, event.GetInt(), selectedActivationKey());
+        EditBinding(KeyList, event.GetInt(), selectedActivationKey(ActivationKeys));
     } 
 
     void onRemoveBindingButton(wxCommandEvent& event) {
@@ -362,6 +398,7 @@ public:
 
 
 private:
+    wxChoice* ActivationKeys2;
     Options options;
     boost::scoped_ptr<ProgList> disableProgs;
     boost::scoped_ptr<ProgList> enableProgs;

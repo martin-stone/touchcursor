@@ -33,7 +33,7 @@
 #include <windows.h>
 #include <shlobj.h>
 
-BOOST_CLASS_VERSION(Options, 6)
+BOOST_CLASS_VERSION(Options, 7)
 
 
 namespace {
@@ -166,6 +166,9 @@ namespace boost {
             if (version < 6) { // first open source version
                 // just ignore old key stuff
             }
+            if (version >= 7) {
+                ar & opts.activationKey2;
+            }
         }
     } 
 } 
@@ -180,6 +183,7 @@ Options::Options(InitOpt opt)
     , showInNotificationArea(true)
     , checkForUpdates(true)
     , activationKey(VK_SPACE)
+    , activationKey2(0)
     , useEnableList(false)  
     , useOnlyTrainList(false)
 {
@@ -202,6 +206,8 @@ Options::Options(InitOpt opt)
 void Options::Load() {
     std::wistringstream in(readSettings());
     boost::archive::text_wiarchive ia(in);
+    // Older archives do not contain the optional second activation key.
+    activationKey2 = 0;
     ia >> *this;
 }
 

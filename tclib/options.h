@@ -40,6 +40,7 @@ struct Options {
     bool showInNotificationArea;
     bool checkForUpdates;
     int activationKey;
+    int activationKey2;
 
     // Key mapping
     static const int maxCodes = 0x100;

@@ -42,6 +42,7 @@ namespace {
     static Options options;
     static HHOOK HookHandle = 0;
     static DWORD savedKeyDown = 0;
+    static DWORD activeActivationKey = 0;
     static bool hadKeypressSinceLastTick = false;
 
     // Must keep track of what is held, so that we can do key-ups for 
@@ -227,8 +228,17 @@ namespace {
         return options.keyMapping[code];
     }
 
+    static bool isActivationKey(DWORD code) {
+        return code == static_cast<DWORD>(options.activationKey)
+            || (options.activationKey2 && code == static_cast<DWORD>(options.activationKey2));
+    }
+
+    static DWORD activationKeyForOutput() {
+        return activeActivationKey ? activeActivationKey : options.activationKey;
+    }
+
     static bool allowedInTrainingMode(DWORD code) {
-        if (code == options.activationKey) {
+        if (isActivationKey(code)) {
             // still must be allowed even if it's mapped to a key
             return true;
         }
@@ -273,12 +283,12 @@ namespace {
     }
 
     bool tapActivationKey(DWORD) {
-        tapKey(options.activationKey);
+        tapKey(activationKeyForOutput());
         return true;
     }
 
     bool activationKeyDownThenKey(DWORD code) {
-        keyDownEvent(options.activationKey);
+        keyDownEvent(activationKeyForOutput());
         keyDownEvent(code);
         return true;
     }
@@ -306,15 +316,15 @@ namespace {
     }
 
     bool emitActDownSavedDownActUp(DWORD code) {
-        keyDownEvent(options.activationKey);
+        keyDownEvent(activationKeyForOutput());
         emitSaved(code);
-        keyUpEvent(options.activationKey);
+        keyUpEvent(activationKeyForOutput());
         return true;
     }
 
     bool emitSavedDownAndActUp(DWORD code) {
         emitSaved(code);
-        keyUpEvent(options.activationKey);
+        keyUpEvent(activationKeyForOutput());
         return true;
     }
 
@@ -338,14 +348,14 @@ namespace {
     }
 
     bool emitActSavedAndCurrentDown(DWORD code) {
-        keyDownEvent(options.activationKey);
+        keyDownEvent(activationKeyForOutput());
         emitSaved(code);
         keyDownEvent(code);
         return true;
     }
 
     bool emitActSavedAndCurrentUp(DWORD code) {
-        keyDownEvent(options.activationKey);
+        keyDownEvent(activationKeyForOutput());
         emitSaved(code);
         keyUpEvent(code);
         return true;
@@ -397,25 +407,43 @@ namespace {
         void Reset() {
             state = idle;
             savedKeyDown = 0;
+            activeActivationKey = 0;
         }
 
         // returns true if key should be discarded
         bool ProcessKey(WPARAM wParam, DWORD code) {
+            const bool keyDown = isKeyDown(wParam);
             Event e = numEvents;
-            if (code == options.activationKey) {
-                e = isKeyDown(wParam) ? activationDown : activationUp;
+            if (keyDown && state == idle && isActivationKey(code)) {
+                activeActivationKey = code;
+                e = activationDown;
             }
-            else if (code == configKey && isKeyDown(wParam)) {
+            else if (activeActivationKey && code == activeActivationKey) {
+                e = keyDown ? activationDown : activationUp;
+            }
+            else if (activeActivationKey && isActivationKey(code)) {
+                // Another configured activation key must not leak through as
+                // a mapped or ordinary key while this activation is active.
+                return true;
+            }
+            else if (!keyDown && state == idle && isActivationKey(code)) {
+                e = activationUp;
+            }
+            else if (code == configKey && keyDown) {
                 e = configKeyDown;
             }
             else if (translateCode(code))
             {
-                e = isKeyDown(wParam) ? mappedKeyDown : mappedKeyUp;
+                e = keyDown ? mappedKeyDown : mappedKeyUp;
             }
             else {
-                e = isKeyDown(wParam) ? otherKeyDown : otherKeyUp;
+                e = keyDown ? otherKeyDown : otherKeyUp;
             }
-            return processEvent(e, code);
+            const bool discard = processEvent(e, code);
+            if (e == activationUp && code == activeActivationKey) {
+                activeActivationKey = 0;
+            }
+            return discard;
         }
 
 
@@ -667,6 +695,7 @@ namespace test {
     const DWORD m = L'M';
     const DWORD x = L'X';
     const DWORD c = L'C';
+    const DWORD q = L'Q';
     const DWORD SP = VK_SPACE;
     const DWORD LE = VK_LEFT;
     const DWORD DEL = VK_DELETE;
@@ -733,6 +762,38 @@ namespace test {
             assert(isExtendedKey(VK_RMENU));
             assert(!isExtendedKey(VK_F1));
             assert(!isExtendedKey(0));
+
+            // optional second activation key
+            options.activationKey2 = q;
+            resetOutput();
+            CHECK((q, dn,  0));
+            CHECK((q, up,  q,dn, q,up, 0));
+
+            resetOutput();
+            CHECK((q, dn,  0));
+            CHECK((j, dn,  0));
+            CHECK((j, up,  LE,edn, LE,up, 0));
+            CHECK((q, up,  LE,edn, LE,up, 0));
+
+            resetOutput();
+            CHECK((q, dn,  0));
+            CHECK((x, dn,  q,dn, x,dn, 0));
+            CHECK((q, up,  q,dn, x,dn, q,up, 0));
+            CHECK((x, up,  q,dn, x,dn, q,up, x,up, 0));
+
+            // overlapping activation keys: the non-active one is swallowed
+            resetOutput();
+            CHECK((SP, dn,  0));
+            CHECK((q, dn,   0));
+            CHECK((q, up,   0));
+            CHECK((SP, up,  SP,dn, SP,up, 0));
+
+            resetOutput();
+            CHECK((q, dn,   0));
+            CHECK((SP, dn,  0));
+            CHECK((SP, up,  0));
+            CHECK((q, up,   q,dn, q,up, 0));
+            options.activationKey2 = 0;
 
             // normal (slow) typing
             resetOutput();
